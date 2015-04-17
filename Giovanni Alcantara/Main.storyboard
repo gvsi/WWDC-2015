@@ -66,8 +66,8 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="1nv-cN-QKL" id="Vdn-G3-3w5"/>
-                        <outlet property="bgScrollView" destination="gEA-7L-hu1" id="ZiT-eN-Fn1"/>
                         <outlet property="logoButton" destination="Ois-ef-f1f" id="6Dz-By-tMM"/>
+                        <outlet property="pagedScrollView" destination="gEA-7L-hu1" id="XTl-Nw-073"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

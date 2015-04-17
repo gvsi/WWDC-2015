@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "OQx70jjBSLOMI5ackhxm_urbex-ppc-030.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "OQx70jjBSLOMI5ackhxm_urbex-ppc-030.png"
     },
     {
       "idiom" : "universal",

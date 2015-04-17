@@ -8,10 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var logoButton: LogoButton!
+    @IBOutlet weak var pagedScrollView: UIScrollView!
+    
+    var pageView1 = UIScrollView()
+    var pageView2 = UIScrollView()
+    var pageView3 = UIScrollView()
+    
+    var backgroundImageView1 = UIImageView()
+    var backgroundImageView2 = UIImageView()
+    var backgroundImageView3 = UIImageView()
+
+    
     
     func colorsWithHalfOpacity(colors: [CGColor]) -> [CGColor] {
         return colors.map({ CGColorCreateCopyWithAlpha($0, CGColorGetAlpha($0) * 0.5) })
@@ -20,7 +31,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        println(self.view.frame)
         
         logoButton.layer.addPulse { builder in
             //builder.borderColors = [UIColor(hex: "34495e").CGColor]
@@ -33,7 +43,20 @@ class ViewController: UIViewController {
             builder.backgroundColors = []
         }
         
-        var size = max(self.view.frame.size.width, self.view.frame.size.height)
+        var numberOfPages: CGFloat = 3
+        var i: CGFloat = 0
+        
+        self.pagedScrollView.frame = CGRectMake(0, 0, self.view.frame.width + 2*SIDE_BAR_WIDTH, self.view.frame.height)
+        self.pagedScrollView.contentSize = CGSize(width: self.pagedScrollView.frame.width * numberOfPages, height: self.pagedScrollView.frame.height)
+        self.pagedScrollView.pagingEnabled = true
+        self.pagedScrollView.delegate = self
+        self.setPageView()
+        //print("contentSize: \(self.scrollView.contentSize.width)\n")
+        print("scrollView: \(self.pagedScrollView.frame.width)\n")
+        //print("pageView: \(self.pageView2.frame.width)\n")
+        //print("pageViewContent: \(self.pageView3.frame.origin.x)\n")
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +82,68 @@ class ViewController: UIViewController {
             }, completion: { finished in
         })
 
+    }
+    
+    
+    let MAX_BACKGROUND_SCROLL_DISTANCE: CGFloat = 150
+    let SIDE_BAR_WIDTH: CGFloat = 2
+
+    
+    func setPageView() {
+        
+        pageView1.contentSize = CGSize(width: self.view.frame.width + 2*MAX_BACKGROUND_SCROLL_DISTANCE, height: pagedScrollView.frame.height)
+        pageView1.frame = CGRectMake(0, 0, self.view.frame.width, self.pagedScrollView.frame.height)
+        pageView1.setContentOffset(CGPointMake(MAX_BACKGROUND_SCROLL_DISTANCE, 0), animated: false)
+        self.pageView1.userInteractionEnabled = false
+        self.pagedScrollView.addSubview(pageView1)
+        
+        
+        pageView2.contentSize = CGSize(width: self.view.frame.width + 2*MAX_BACKGROUND_SCROLL_DISTANCE, height: pagedScrollView.frame.height)
+        pageView2.frame = CGRectMake(self.pagedScrollView.frame.width, 0, self.view.frame.width, self.pagedScrollView.frame.height)
+        pageView2.setContentOffset(CGPointMake(MAX_BACKGROUND_SCROLL_DISTANCE, 0), animated: false)
+        self.pageView2.userInteractionEnabled = false
+        self.pagedScrollView.addSubview(pageView2)
+        
+        pageView3.contentSize = CGSize(width: self.view.frame.width + 2*MAX_BACKGROUND_SCROLL_DISTANCE, height: pagedScrollView.frame.height)
+        pageView3.frame = CGRectMake(self.pagedScrollView.frame.width*2, 0, self.view.frame.width, self.pagedScrollView.frame.height)
+        pageView3.setContentOffset(CGPointMake(MAX_BACKGROUND_SCROLL_DISTANCE, 0), animated: false)
+        self.pageView3.userInteractionEnabled = false
+        self.pagedScrollView.addSubview(pageView3)
+        
+        self.setBackgroundImageView()
+    }
+    
+    func setBackgroundImageView() {
+        
+        backgroundImageView1.image = UIImage(named: "page1")
+        backgroundImageView1.frame = CGRectMake(MAX_BACKGROUND_SCROLL_DISTANCE, 0, self.pagedScrollView.frame.width, self.pagedScrollView.frame.height)
+        self.pageView1.addSubview(backgroundImageView1)
+        
+        
+        backgroundImageView2.image = UIImage(named: "page2")
+        backgroundImageView2.frame = CGRectMake(MAX_BACKGROUND_SCROLL_DISTANCE, 0, self.pagedScrollView.frame.width, self.pagedScrollView.frame.height)
+        self.pageView2.addSubview(backgroundImageView2)
+        
+        
+        backgroundImageView3.image = UIImage(named: "page3")
+        backgroundImageView3.frame = CGRectMake(MAX_BACKGROUND_SCROLL_DISTANCE, 0, self.pagedScrollView.frame.width, self.pagedScrollView.frame.height)
+        self.pageView3.addSubview(backgroundImageView3)
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        var ratio = self.pagedScrollView.contentOffset.x / self.pagedScrollView.frame.width
+        
+        if ratio > -1 && ratio < 1 {
+            self.pageView1.setContentOffset(CGPointMake(MAX_BACKGROUND_SCROLL_DISTANCE - ratio*MAX_BACKGROUND_SCROLL_DISTANCE, 0), animated: false)
+        }
+        if ratio > 0 && ratio < 2 {
+            self.pageView2.setContentOffset(CGPointMake(MAX_BACKGROUND_SCROLL_DISTANCE - (ratio-1)*MAX_BACKGROUND_SCROLL_DISTANCE, 0), animated: false)
+        }
+        if ratio > 1 && ratio < 3 {
+            self.pageView3.setContentOffset(CGPointMake(MAX_BACKGROUND_SCROLL_DISTANCE - (ratio-2)*MAX_BACKGROUND_SCROLL_DISTANCE, 0), animated: false)
+        }
+        print("\(self.pagedScrollView.contentOffset.x)\n")
+        //print("\(ratio)\n")
     }
     
 }
