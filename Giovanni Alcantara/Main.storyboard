@@ -16,6 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEA-7L-hu1">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_blurred" translatesAutoresizingMaskIntoConstraints="NO" id="1nv-cN-QKL">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ois-ef-f1f" customClass="LogoButton" customModule="Giovanni_Alcantara" customModuleProvider="target">
                                 <rect key="frame" x="250" y="250" width="100" height="100"/>
                                 <constraints>
@@ -30,10 +36,10 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
-                                        <color key="value" red="0.15686274509803921" green="0.2196078431372549" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.051257352490326563" green="0.14190402561007442" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="notActiveColor">
-                                        <color key="value" red="0.12941176470588237" green="0.1803921568627451" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="logoActiveColor">
                                         <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,13 +52,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gEA-7L-hu1" firstAttribute="top" secondItem="1nv-cN-QKL" secondAttribute="top" id="18M-tZ-zrT"/>
                             <constraint firstAttribute="centerY" secondItem="Ois-ef-f1f" secondAttribute="centerY" id="LT6-y1-wrH"/>
+                            <constraint firstItem="1nv-cN-QKL" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="MmI-Jw-LrV"/>
+                            <constraint firstItem="gEA-7L-hu1" firstAttribute="leading" secondItem="1nv-cN-QKL" secondAttribute="leading" id="N4h-xC-Qyg"/>
                             <constraint firstAttribute="centerX" secondItem="Ois-ef-f1f" secondAttribute="centerX" id="bAT-8T-uJt"/>
+                            <constraint firstItem="1nv-cN-QKL" firstAttribute="centerY" secondItem="Ois-ef-f1f" secondAttribute="centerY" id="cBH-yV-F0e"/>
+                            <constraint firstItem="1nv-cN-QKL" firstAttribute="centerX" secondItem="Ois-ef-f1f" secondAttribute="centerX" id="hUm-Vc-DP4"/>
+                            <constraint firstItem="1nv-cN-QKL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pOQ-yh-VX4"/>
+                            <constraint firstItem="gEA-7L-hu1" firstAttribute="trailing" secondItem="1nv-cN-QKL" secondAttribute="trailing" id="ppS-CK-Qs1"/>
+                            <constraint firstItem="gEA-7L-hu1" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="w9c-L9-BEO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="1nv-cN-QKL" id="Vdn-G3-3w5"/>
+                        <outlet property="bgScrollView" destination="gEA-7L-hu1" id="ZiT-eN-Fn1"/>
+                        <outlet property="logoButton" destination="Ois-ef-f1f" id="6Dz-By-tMM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="profile_blurred" width="1440" height="839"/>
+    </resources>
 </document>
