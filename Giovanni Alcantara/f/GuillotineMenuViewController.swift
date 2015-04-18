@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GuillotineMenuViewController: UIViewController {
+class GuillotineMenuViewController: UIViewController, GuillotineAnimationDelegate {
 
     var hostNavigationBarHeight: CGFloat!
     var hostTitleText: NSString!
@@ -54,8 +54,20 @@ class GuillotineMenuViewController: UIViewController {
         }
     }
     
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if let button = sender as? UIButton {
+//            self.dismissViewControllerAnimated(true, completion: nil)
+//            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+//            var newVC = [mainStoryboard.instantiateViewControllerWithIdentifier("NewViewController") as! UIViewController]
+//            var myNC = segue.destinationViewController as! UINavigationController
+//            myNC.viewControllers = newVC
+//        }
+//    }
+    
+    
 // MARK: Actions
     func closeMenuButtonTapped() {
+        println("closed")
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -112,5 +124,13 @@ extension GuillotineMenuViewController: GuillotineAnimationProtocol {
     
     func hostTitle () -> NSString {
         return hostTitleText
+    }
+}
+
+extension GuillotineMenuViewController {
+    @IBAction func buttonPressed(sender: UIButton) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.application(handleMenuChangeWithButton: sender)
+        closeMenuButtonTapped()
     }
 }

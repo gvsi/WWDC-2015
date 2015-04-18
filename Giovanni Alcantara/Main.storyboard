@@ -70,6 +70,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="Za9-Fg-7CP" eventType="touchUpInside" id="p12-Am-6RV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -97,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSw-Pr-zEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889" y="-436"/>
+            <point key="canvasLocation" x="1919" y="400"/>
         </scene>
         <!--Activity-->
         <scene sceneID="0YW-bB-r1S">
@@ -158,17 +161,19 @@
                         <outlet property="backgroundImageView" destination="8jr-bz-tKo" id="HD7-yr-9dH"/>
                         <outlet property="barButton" destination="Rsc-PX-D99" id="Lfm-pz-zzR"/>
                         <outlet property="logoButton" destination="BrR-dU-HRE" id="1m1-bN-oBM"/>
+                        <segue destination="c8n-mb-vPo" kind="show" id="AV5-YH-870"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d8c-Re-eNv" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1043" y="-357"/>
+            <point key="canvasLocation" x="1091" y="1183"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Pages Navigation Controller-->
         <scene sceneID="9VY-V3-H5a">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ef5-ab-UM6" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ef5-ab-UM6" customClass="PagesNavigationController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ROm-mF-e2h"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Afw-50-9q0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -180,7 +185,72 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MoU-bm-Wxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="289" y="-258"/>
+            <point key="canvasLocation" x="-68" y="599"/>
+        </scene>
+        <!--Activity-->
+        <scene sceneID="ieD-N7-467">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BUL-9J-dag" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="NewViewController" id="c8n-mb-vPo" customClass="ViewController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nuP-s3-EkX"/>
+                        <viewControllerLayoutGuide type="bottom" id="SAn-DG-aGC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Wj-34-VHd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="page1" translatesAutoresizingMaskIntoConstraints="NO" id="Hs2-38-3nD">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYM-Vp-Mfn" customClass="LogoButton" customModule="Giovanni_Alcantara" customModuleProvider="target">
+                                <rect key="frame" x="235" y="267" width="130" height="130"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" red="0.15686274510000001" green="0.21960784310000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
+                                        <color key="value" red="0.051257352489999998" green="0.14190402560000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="notActiveColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="logoActiveColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="activate:" destination="c8n-mb-vPo" eventType="touchUpInside" id="ppX-0l-shy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Activity" id="yv3-Xu-19I">
+                        <barButtonItem key="leftBarButtonItem" id="Epj-Pf-Igh">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qUJ-7k-WAB">
+                                <rect key="frame" x="16" y="7" width="10" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_menuRotated">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Za9-Fg-7CP" kind="custom" customClass="GuillotineMenuSegue" customModule="Giovanni_Alcantara" customModuleProvider="target" id="q2o-2M-RB1"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="Hs2-38-3nD" id="CkR-31-0dW"/>
+                        <outlet property="barButton" destination="qUJ-7k-WAB" id="Vq9-r8-vqJ"/>
+                        <outlet property="logoButton" destination="GYM-Vp-Mfn" id="HVA-TK-Mri"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1939" y="1217"/>
         </scene>
     </scenes>
     <resources>
@@ -189,6 +259,10 @@
         <image name="ic_menuRotated" width="10" height="14"/>
         <image name="ic_profile" width="17" height="24"/>
         <image name="ic_settings" width="23" height="23"/>
+        <image name="page1" width="1440" height="839"/>
         <image name="profile_blurred" width="1440" height="839"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="q2o-2M-RB1"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,7 @@
 		3F9912F81ADE5E2700470C65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F9912F71ADE5E2700470C65 /* Images.xcassets */; };
 		3F9912FB1ADE5E2700470C65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9912F91ADE5E2700470C65 /* LaunchScreen.xib */; };
 		3F9913071ADE5E2700470C65 /* Giovanni_AlcantaraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9913061ADE5E2700470C65 /* Giovanni_AlcantaraTests.swift */; };
+		3FEFE4521AE2EF970067AB34 /* PagesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFE4511AE2EF970067AB34 /* PagesNavigationController.swift */; };
 		3FF0F5E71AE298860041A848 /* GuillotineMenuSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0F5E31AE298860041A848 /* GuillotineMenuSegue.swift */; };
 		3FF0F5E81AE298860041A848 /* GuillotineMenuTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0F5E41AE298860041A848 /* GuillotineMenuTransitionAnimation.swift */; };
 		3FF0F5E91AE298860041A848 /* GuillotineMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0F5E51AE298860041A848 /* GuillotineMenuViewController.swift */; };
@@ -47,6 +48,7 @@
 		3F9913001ADE5E2700470C65 /* Giovanni AlcantaraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Giovanni AlcantaraTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9913051ADE5E2700470C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F9913061ADE5E2700470C65 /* Giovanni_AlcantaraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Giovanni_AlcantaraTests.swift; sourceTree = "<group>"; };
+		3FEFE4511AE2EF970067AB34 /* PagesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesNavigationController.swift; sourceTree = "<group>"; };
 		3FF0F5E31AE298860041A848 /* GuillotineMenuSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuillotineMenuSegue.swift; path = f/GuillotineMenuSegue.swift; sourceTree = "<group>"; };
 		3FF0F5E41AE298860041A848 /* GuillotineMenuTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuillotineMenuTransitionAnimation.swift; path = f/GuillotineMenuTransitionAnimation.swift; sourceTree = "<group>"; };
 		3FF0F5E51AE298860041A848 /* GuillotineMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuillotineMenuViewController.swift; path = f/GuillotineMenuViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				3F4B92C21ADE94EB009CD7A0 /* LogoButton Files */,
 				3FF8E2261AE2997D00978C08 /* ViewController.swift */,
 				3F9912F01ADE5E2700470C65 /* AppDelegate.swift */,
+				3FEFE4511AE2EF970067AB34 /* PagesNavigationController.swift */,
 				3F4B92C01ADE94C7009CD7A0 /* Main.storyboard */,
 				3F9912F71ADE5E2700470C65 /* Images.xcassets */,
 				3F9912EE1ADE5E2700470C65 /* Supporting Files */,
@@ -258,6 +261,7 @@
 				3FF0F5E91AE298860041A848 /* GuillotineMenuViewController.swift in Sources */,
 				3FF0F5E71AE298860041A848 /* GuillotineMenuSegue.swift in Sources */,
 				3F9912F11ADE5E2700470C65 /* AppDelegate.swift in Sources */,
+				3FEFE4521AE2EF970067AB34 /* PagesNavigationController.swift in Sources */,
 				3F4B92C41ADEAE67009CD7A0 /* Pulse.swift in Sources */,
 				3F4B92BC1ADE94A1009CD7A0 /* Extensions.swift in Sources */,
 				3F4B92BE1ADE94A1009CD7A0 /* Paths.swift in Sources */,

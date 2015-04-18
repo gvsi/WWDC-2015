@@ -195,6 +195,7 @@ extension GuillotineTransitionAnimation: UIDynamicAnimatorDelegate {
             anchorPoint = CGPointZero
             menu.endAppearanceTransition()
             println("finished")
+            
             if let animationDelegate = menu as? protocol<GuillotineAnimationDelegate> {
                 animationDelegate.menuDidFinishPresentation?()
             }
