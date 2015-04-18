@@ -114,11 +114,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_blurred" translatesAutoresizingMaskIntoConstraints="NO" id="8jr-bz-tKo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_blurred" translatesAutoresizingMaskIntoConstraints="NO" id="8jr-bz-tKo">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrR-dU-HRE" customClass="LogoButton" customModule="Giovanni_Alcantara" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrR-dU-HRE" customClass="LogoButton" customModule="Giovanni_Alcantara" customModuleProvider="target">
                                 <rect key="frame" x="235" y="267" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="CVj-0M-7LD"/>
+                                    <constraint firstAttribute="width" constant="130" id="NMP-Rp-1lK"/>
+                                    <constraint firstAttribute="width" constant="130" id="pPu-dm-BP9"/>
+                                </constraints>
                                 <state key="normal">
                                     <color key="titleShadowColor" red="0.15686274510000001" green="0.21960784310000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -136,12 +141,31 @@
                                         <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NMP-Rp-1lK"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="activate:" destination="q51-zX-cAF" eventType="touchUpInside" id="1ZZ-qd-Kch"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8jr-bz-tKo" secondAttribute="trailing" id="D54-Gd-QIT"/>
+                            <constraint firstItem="8jr-bz-tKo" firstAttribute="bottom" secondItem="erh-mK-NMj" secondAttribute="top" id="I14-4T-rQa"/>
+                            <constraint firstItem="8jr-bz-tKo" firstAttribute="leading" secondItem="Dan-zy-EVN" secondAttribute="leading" id="LaM-th-ZY4"/>
+                            <constraint firstItem="BrR-dU-HRE" firstAttribute="top" secondItem="fqH-Ea-cAs" secondAttribute="bottom" id="SUn-vC-cne"/>
+                            <constraint firstItem="BrR-dU-HRE" firstAttribute="centerY" secondItem="8jr-bz-tKo" secondAttribute="centerY" id="ZrJ-lE-93F"/>
+                            <constraint firstItem="8jr-bz-tKo" firstAttribute="top" secondItem="fqH-Ea-cAs" secondAttribute="bottom" id="lau-Q2-2og"/>
+                            <constraint firstItem="BrR-dU-HRE" firstAttribute="centerX" secondItem="8jr-bz-tKo" secondAttribute="centerX" id="oxl-Mg-SK0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="SUn-vC-cne"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Activity" id="afg-mW-fHU">
                         <barButtonItem key="leftBarButtonItem" id="iAG-BG-UgU">
@@ -190,7 +214,6 @@
         <!--Activity-->
         <scene sceneID="ieD-N7-467">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BUL-9J-dag" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="NewViewController" id="c8n-mb-vPo" customClass="ViewController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nuP-s3-EkX"/>
@@ -200,11 +223,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="page1" translatesAutoresizingMaskIntoConstraints="NO" id="Hs2-38-3nD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1" translatesAutoresizingMaskIntoConstraints="NO" id="Hs2-38-3nD">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYM-Vp-Mfn" customClass="LogoButton" customModule="Giovanni_Alcantara" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYM-Vp-Mfn" customClass="LogoButton" customModule="Giovanni_Alcantara" customModuleProvider="target">
                                 <rect key="frame" x="235" y="267" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="lxI-bP-JBs"/>
+                                </constraints>
                                 <state key="normal">
                                     <color key="titleShadowColor" red="0.15686274510000001" green="0.21960784310000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -228,6 +254,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hs2-38-3nD" firstAttribute="bottom" secondItem="SAn-DG-aGC" secondAttribute="top" id="8uh-Gu-CbF"/>
+                            <constraint firstItem="Hs2-38-3nD" firstAttribute="centerX" secondItem="GYM-Vp-Mfn" secondAttribute="centerX" id="TK1-mA-BIY"/>
+                            <constraint firstItem="Hs2-38-3nD" firstAttribute="top" secondItem="nuP-s3-EkX" secondAttribute="bottom" id="cyF-SN-8O0"/>
+                            <constraint firstItem="GYM-Vp-Mfn" firstAttribute="centerY" secondItem="Hs2-38-3nD" secondAttribute="centerY" id="pWY-dQ-LO0"/>
+                            <constraint firstItem="GYM-Vp-Mfn" firstAttribute="top" secondItem="nuP-s3-EkX" secondAttribute="bottom" constant="203" id="q7P-Vs-NeQ"/>
+                            <constraint firstItem="Hs2-38-3nD" firstAttribute="leading" secondItem="4Wj-34-VHd" secondAttribute="leading" id="tQb-43-Cc0"/>
+                            <constraint firstAttribute="trailing" secondItem="Hs2-38-3nD" secondAttribute="trailing" id="xXO-4m-my4"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Activity" id="yv3-Xu-19I">
                         <barButtonItem key="leftBarButtonItem" id="Epj-Pf-Igh">
@@ -249,6 +284,7 @@
                         <outlet property="logoButton" destination="GYM-Vp-Mfn" id="HVA-TK-Mri"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BUL-9J-dag" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1939" y="1217"/>
         </scene>
@@ -263,6 +299,6 @@
         <image name="profile_blurred" width="1440" height="839"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q2o-2M-RB1"/>
+        <segue reference="p7g-kM-mzl"/>
     </inferredMetricsTieBreakers>
 </document>
