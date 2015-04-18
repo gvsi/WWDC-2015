@@ -10,13 +10,17 @@
 		3F4B92BC1ADE94A1009CD7A0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B92B81ADE94A1009CD7A0 /* Extensions.swift */; };
 		3F4B92BD1ADE94A1009CD7A0 /* LogoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B92B91ADE94A1009CD7A0 /* LogoButton.swift */; };
 		3F4B92BE1ADE94A1009CD7A0 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B92BA1ADE94A1009CD7A0 /* Paths.swift */; };
-		3F4B92BF1ADE94A1009CD7A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B92BB1ADE94A1009CD7A0 /* ViewController.swift */; };
 		3F4B92C11ADE94C7009CD7A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B92C01ADE94C7009CD7A0 /* Main.storyboard */; };
 		3F4B92C41ADEAE67009CD7A0 /* Pulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B92C31ADEAE67009CD7A0 /* Pulse.swift */; };
 		3F9912F11ADE5E2700470C65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9912F01ADE5E2700470C65 /* AppDelegate.swift */; };
 		3F9912F81ADE5E2700470C65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F9912F71ADE5E2700470C65 /* Images.xcassets */; };
 		3F9912FB1ADE5E2700470C65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9912F91ADE5E2700470C65 /* LaunchScreen.xib */; };
 		3F9913071ADE5E2700470C65 /* Giovanni_AlcantaraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9913061ADE5E2700470C65 /* Giovanni_AlcantaraTests.swift */; };
+		3FF0F5E71AE298860041A848 /* GuillotineMenuSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0F5E31AE298860041A848 /* GuillotineMenuSegue.swift */; };
+		3FF0F5E81AE298860041A848 /* GuillotineMenuTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0F5E41AE298860041A848 /* GuillotineMenuTransitionAnimation.swift */; };
+		3FF0F5E91AE298860041A848 /* GuillotineMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0F5E51AE298860041A848 /* GuillotineMenuViewController.swift */; };
+		3FF0F5EA1AE298860041A848 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0F5E61AE298860041A848 /* UIViewExtension.swift */; };
+		3FF8E2271AE2997D00978C08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8E2261AE2997D00978C08 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +37,6 @@
 		3F4B92B81ADE94A1009CD7A0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3F4B92B91ADE94A1009CD7A0 /* LogoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoButton.swift; sourceTree = "<group>"; };
 		3F4B92BA1ADE94A1009CD7A0 /* Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
-		3F4B92BB1ADE94A1009CD7A0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F4B92C01ADE94C7009CD7A0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3F4B92C31ADEAE67009CD7A0 /* Pulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pulse.swift; sourceTree = "<group>"; };
 		3F9912EB1ADE5E2700470C65 /* Giovanni Alcantara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Giovanni Alcantara.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,11 @@
 		3F9913001ADE5E2700470C65 /* Giovanni AlcantaraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Giovanni AlcantaraTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9913051ADE5E2700470C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F9913061ADE5E2700470C65 /* Giovanni_AlcantaraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Giovanni_AlcantaraTests.swift; sourceTree = "<group>"; };
+		3FF0F5E31AE298860041A848 /* GuillotineMenuSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuillotineMenuSegue.swift; path = f/GuillotineMenuSegue.swift; sourceTree = "<group>"; };
+		3FF0F5E41AE298860041A848 /* GuillotineMenuTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuillotineMenuTransitionAnimation.swift; path = f/GuillotineMenuTransitionAnimation.swift; sourceTree = "<group>"; };
+		3FF0F5E51AE298860041A848 /* GuillotineMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuillotineMenuViewController.swift; path = f/GuillotineMenuViewController.swift; sourceTree = "<group>"; };
+		3FF0F5E61AE298860041A848 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = f/UIViewExtension.swift; sourceTree = "<group>"; };
+		3FF8E2261AE2997D00978C08 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				3F4B92C31ADEAE67009CD7A0 /* Pulse.swift */,
+				3FF0F5E21AE2987A0041A848 /* Menu */,
 				3F4B92C21ADE94EB009CD7A0 /* LogoButton Files */,
-				3F4B92BB1ADE94A1009CD7A0 /* ViewController.swift */,
+				3FF8E2261AE2997D00978C08 /* ViewController.swift */,
 				3F9912F01ADE5E2700470C65 /* AppDelegate.swift */,
 				3F4B92C01ADE94C7009CD7A0 /* Main.storyboard */,
 				3F9912F71ADE5E2700470C65 /* Images.xcassets */,
@@ -130,6 +139,17 @@
 				3F9913051ADE5E2700470C65 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3FF0F5E21AE2987A0041A848 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				3FF0F5E31AE298860041A848 /* GuillotineMenuSegue.swift */,
+				3FF0F5E41AE298860041A848 /* GuillotineMenuTransitionAnimation.swift */,
+				3FF0F5E51AE298860041A848 /* GuillotineMenuViewController.swift */,
+				3FF0F5E61AE298860041A848 /* UIViewExtension.swift */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,11 +253,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F4B92BF1ADE94A1009CD7A0 /* ViewController.swift in Sources */,
+				3FF8E2271AE2997D00978C08 /* ViewController.swift in Sources */,
+				3FF0F5EA1AE298860041A848 /* UIViewExtension.swift in Sources */,
+				3FF0F5E91AE298860041A848 /* GuillotineMenuViewController.swift in Sources */,
+				3FF0F5E71AE298860041A848 /* GuillotineMenuSegue.swift in Sources */,
 				3F9912F11ADE5E2700470C65 /* AppDelegate.swift in Sources */,
 				3F4B92C41ADEAE67009CD7A0 /* Pulse.swift in Sources */,
 				3F4B92BC1ADE94A1009CD7A0 /* Extensions.swift in Sources */,
 				3F4B92BE1ADE94A1009CD7A0 /* Paths.swift in Sources */,
+				3FF0F5E81AE298860041A848 /* GuillotineMenuTransitionAnimation.swift in Sources */,
 				3F4B92BD1ADE94A1009CD7A0 /* LogoButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

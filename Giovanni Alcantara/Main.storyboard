@@ -1,42 +1,130 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ef5-ab-UM6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Guillotine Menu View Controller-->
+        <scene sceneID="HUR-I3-PBq">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Za9-Fg-7CP" customClass="GuillotineMenuViewController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="cqc-je-Pkj"/>
+                        <viewControllerLayoutGuide type="bottom" id="0cg-ci-yBZ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="KDt-52-Vuv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEA-7L-hu1">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_blurred" translatesAutoresizingMaskIntoConstraints="NO" id="1nv-cN-QKL">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ois-ef-f1f" customClass="LogoButton" customModule="Giovanni_Alcantara" customModuleProvider="target">
-                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8n4-yY-55e">
+                                <rect key="frame" x="150" y="175" width="300" height="250"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rso-IM-iww">
+                                        <rect key="frame" x="54" y="202" width="200" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="KVH-9A-Hqb"/>
+                                            <constraint firstAttribute="height" constant="40" id="RFJ-cS-oTs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="SETTINGS" image="ic_settings">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0c-mh-tiC">
+                                        <rect key="frame" x="50" y="8" width="200" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="GjF-Wp-SIZ"/>
+                                            <constraint firstAttribute="height" constant="40" id="XXG-KK-ntv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="PROFILE" image="ic_profile">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFo-Nx-jza">
+                                        <rect key="frame" x="50" y="56" width="200" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="U5l-PF-aFI"/>
+                                            <constraint firstAttribute="width" constant="200" id="pdy-Gc-QCf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="FEED" image="ic_feed">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEw-Tp-7V2">
+                                        <rect key="frame" x="50" y="105" width="200" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Mh2-Nw-2sZ"/>
+                                            <constraint firstAttribute="width" constant="200" id="xsL-gO-n1c"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="ACTIVITY" image="ic_activity">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="CoI-Xk-aOa"/>
-                                    <constraint firstAttribute="width" constant="100" id="apZ-gS-R0k"/>
+                                    <constraint firstAttribute="centerX" secondItem="B0c-mh-tiC" secondAttribute="centerX" id="0PG-7n-jth"/>
+                                    <constraint firstItem="B0c-mh-tiC" firstAttribute="centerX" secondItem="KFo-Nx-jza" secondAttribute="centerX" id="AKQ-eQ-BaW"/>
+                                    <constraint firstAttribute="height" constant="250" id="FqC-8a-fq4"/>
+                                    <constraint firstItem="Rso-IM-iww" firstAttribute="centerX" secondItem="xEw-Tp-7V2" secondAttribute="centerX" constant="4" id="Sx6-xr-zr2"/>
+                                    <constraint firstItem="xEw-Tp-7V2" firstAttribute="top" secondItem="KFo-Nx-jza" secondAttribute="bottom" constant="9" id="bxq-4d-zuB"/>
+                                    <constraint firstAttribute="width" constant="300" id="j7q-mc-oKZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rso-IM-iww" secondAttribute="bottom" constant="8" id="nX1-4F-eJJ"/>
+                                    <constraint firstItem="xEw-Tp-7V2" firstAttribute="centerX" secondItem="KFo-Nx-jza" secondAttribute="centerX" id="rjO-jQ-IQ2"/>
+                                    <constraint firstItem="KFo-Nx-jza" firstAttribute="top" secondItem="B0c-mh-tiC" secondAttribute="bottom" constant="8" id="s0a-iS-6wQ"/>
+                                    <constraint firstItem="B0c-mh-tiC" firstAttribute="top" secondItem="8n4-yY-55e" secondAttribute="top" constant="8" id="t7c-el-kkD"/>
                                 </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="8n4-yY-55e" secondAttribute="centerY" id="27a-ef-Cfr"/>
+                            <constraint firstAttribute="centerX" secondItem="8n4-yY-55e" secondAttribute="centerX" id="rL7-se-2P5"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OSw-Pr-zEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1889" y="-436"/>
+        </scene>
+        <!--Activity-->
+        <scene sceneID="0YW-bB-r1S">
+            <objects>
+                <viewController id="q51-zX-cAF" customClass="ViewController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fqH-Ea-cAs"/>
+                        <viewControllerLayoutGuide type="bottom" id="erh-mK-NMj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dan-zy-EVN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_blurred" translatesAutoresizingMaskIntoConstraints="NO" id="8jr-bz-tKo">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrR-dU-HRE" customClass="LogoButton" customModule="Giovanni_Alcantara" customModuleProvider="target">
+                                <rect key="frame" x="235" y="267" width="130" height="130"/>
                                 <state key="normal">
-                                    <color key="titleShadowColor" red="0.15686274509803921" green="0.2196078431372549" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.15686274510000001" green="0.21960784310000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
-                                        <color key="value" red="0.051257352490326563" green="0.14190402561007442" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.051257352489999998" green="0.14190402560000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="notActiveColor">
                                         <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,35 +134,61 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="activate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qDe-rV-RvC"/>
+                                    <action selector="activate:" destination="q51-zX-cAF" eventType="touchUpInside" id="1ZZ-qd-Kch"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="gEA-7L-hu1" firstAttribute="top" secondItem="1nv-cN-QKL" secondAttribute="top" id="18M-tZ-zrT"/>
-                            <constraint firstAttribute="centerY" secondItem="Ois-ef-f1f" secondAttribute="centerY" id="LT6-y1-wrH"/>
-                            <constraint firstItem="1nv-cN-QKL" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="MmI-Jw-LrV"/>
-                            <constraint firstItem="gEA-7L-hu1" firstAttribute="leading" secondItem="1nv-cN-QKL" secondAttribute="leading" id="N4h-xC-Qyg"/>
-                            <constraint firstAttribute="centerX" secondItem="Ois-ef-f1f" secondAttribute="centerX" id="bAT-8T-uJt"/>
-                            <constraint firstItem="1nv-cN-QKL" firstAttribute="centerY" secondItem="Ois-ef-f1f" secondAttribute="centerY" id="cBH-yV-F0e"/>
-                            <constraint firstItem="1nv-cN-QKL" firstAttribute="centerX" secondItem="Ois-ef-f1f" secondAttribute="centerX" id="hUm-Vc-DP4"/>
-                            <constraint firstItem="1nv-cN-QKL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pOQ-yh-VX4"/>
-                            <constraint firstItem="gEA-7L-hu1" firstAttribute="trailing" secondItem="1nv-cN-QKL" secondAttribute="trailing" id="ppS-CK-Qs1"/>
-                            <constraint firstItem="gEA-7L-hu1" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="w9c-L9-BEO"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Activity" id="afg-mW-fHU">
+                        <barButtonItem key="leftBarButtonItem" id="iAG-BG-UgU">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rsc-PX-D99">
+                                <rect key="frame" x="16" y="7" width="10" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_menuRotated">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Za9-Fg-7CP" kind="custom" customClass="GuillotineMenuSegue" customModule="Giovanni_Alcantara" customModuleProvider="target" id="p7g-kM-mzl"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="backgroundImageView" destination="1nv-cN-QKL" id="Vdn-G3-3w5"/>
-                        <outlet property="logoButton" destination="Ois-ef-f1f" id="6Dz-By-tMM"/>
-                        <outlet property="pagedScrollView" destination="gEA-7L-hu1" id="XTl-Nw-073"/>
+                        <outlet property="backgroundImageView" destination="8jr-bz-tKo" id="HD7-yr-9dH"/>
+                        <outlet property="barButton" destination="Rsc-PX-D99" id="Lfm-pz-zzR"/>
+                        <outlet property="logoButton" destination="BrR-dU-HRE" id="1m1-bN-oBM"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8c-Re-eNv" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1043" y="-357"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9VY-V3-H5a">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ef5-ab-UM6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Afw-50-9q0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="q51-zX-cAF" kind="relationship" relationship="rootViewController" id="h67-dl-67c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MoU-bm-Wxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="289" y="-258"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ic_activity" width="25" height="19"/>
+        <image name="ic_feed" width="21" height="22"/>
+        <image name="ic_menuRotated" width="10" height="14"/>
+        <image name="ic_profile" width="17" height="24"/>
+        <image name="ic_settings" width="23" height="23"/>
         <image name="profile_blurred" width="1440" height="839"/>
     </resources>
 </document>
