@@ -55,7 +55,7 @@ class HelloViewController: UIViewController {
             self.backgroundImageView.alpha = 0.0
             }, completion: nil)
         
-        UIView.animateWithDuration(3.5, delay: 0.0, options: transitionOptions, animations: {
+        UIView.animateWithDuration(2.0, delay: 0.0, options: transitionOptions, animations: {
             self.logoButton.alpha = 0.0
             }, completion: { [unowned self] finished in
                 self.navigationController?.setNavigationBarHidden(false, animated: true)
