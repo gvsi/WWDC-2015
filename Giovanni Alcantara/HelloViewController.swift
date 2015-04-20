@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import NotificationCenter
 
-class ViewController: UIViewController {
+class HelloViewController: UIViewController {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var logoButton: LogoButton!
@@ -18,14 +19,12 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
+        self.navigationController?.navigationBarHidden = true
+        
         func colorsWithHalfOpacity(colors: [CGColor]) -> [CGColor] {
             return colors.map({ CGColorCreateCopyWithAlpha($0, CGColorGetAlpha($0) * 0.5) })
         }
-        
-        let navBar = self.navigationController!.navigationBar
-        navBar.barTintColor = UIColor(red: 65.0 / 255.0, green: 62.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
-        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
+                
         logoButton.layer.addPulse { builder in
             //builder.borderColors = [UIColor(hex: "34495e").CGColor]
             builder.borderColors = [UIColor.blackColor().CGColor]
@@ -54,18 +53,17 @@ class ViewController: UIViewController {
         
         UIView.animateWithDuration(2.0, delay: 0.2, options: transitionOptions, animations: {
             self.backgroundImageView.alpha = 0.0
-            }, completion: { finished in
-        })
+            }, completion: nil)
         
-        UIView.animateWithDuration(2.0, delay: 0.0, options: transitionOptions, animations: {
+        UIView.animateWithDuration(3.5, delay: 0.0, options: transitionOptions, animations: {
             self.logoButton.alpha = 0.0
-            }, completion: { finished in
+            }, completion: { [unowned self] finished in
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
         })
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        println("prepare")
-        // Your Menu View Controller vew must know the following data for the proper animatio
+        // Your Menu View Controller vew must know the following data for the proper animation
         let destinationVC = segue.destinationViewController as! GuillotineMenuViewController
         destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
         destinationVC.hostTitleText = self.navigationItem.title
@@ -73,7 +71,9 @@ class ViewController: UIViewController {
         destinationVC.setMenuButtonWithImage(barButton.imageView!.image!)
     }
     
-    
+    override func prefersStatusBarHidden() -> Bool {
+        return false;
+    }
     
 }
 

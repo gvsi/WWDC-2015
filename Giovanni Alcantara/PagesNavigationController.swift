@@ -11,7 +11,10 @@ import UIKit
 public class PagesNavigationController : UINavigationController {
     public override func viewDidLoad() {
         super.viewDidLoad()
-        println("test")
+        
+        //self.navigationBar.barTintColor = UIColor(red: 65.0 / 255.0, green: 62.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationBar.barTintColor = UIColor(hex: "2c3e50")
         
         let center = NSNotificationCenter.defaultCenter()
         let queue = NSOperationQueue.mainQueue()
@@ -23,9 +26,6 @@ public class PagesNavigationController : UINavigationController {
                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
                 var newVC = mainStoryboard.instantiateViewControllerWithIdentifier("NewViewController") as! UIViewController
                 self.viewControllers = [newVC]
-                
-            } else {
-                println("nope")
             }
         }
     }

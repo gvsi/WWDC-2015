@@ -178,7 +178,7 @@ extension GuillotineTransitionAnimation: UIViewControllerAnimatedTransitioning {
 
 extension GuillotineTransitionAnimation: UICollisionBehaviorDelegate {
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying, atPoint p: CGPoint) {
-        println("collided")
+        //println("collided")
         if let animationDelegate = menu as? protocol<GuillotineAnimationDelegate> {
                 animationDelegate.menuDidCollideWithBoundary?()
         }
@@ -194,7 +194,7 @@ extension GuillotineTransitionAnimation: UIDynamicAnimatorDelegate {
             menu.view.superview!.addScaleToFitView(menu.view, insets: UIEdgeInsetsZero)
             anchorPoint = CGPointZero
             menu.endAppearanceTransition()
-            println("finished")
+            //println("finished")
             
             if let animationDelegate = menu as? protocol<GuillotineAnimationDelegate> {
                 animationDelegate.menuDidFinishPresentation?()
@@ -209,6 +209,6 @@ extension GuillotineTransitionAnimation: UIDynamicAnimatorDelegate {
     }
     
     func dynamicAnimatorWillResume(animator: UIDynamicAnimator) {
-        println("started")
+        //println("started")
     }
 }

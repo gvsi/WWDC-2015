@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GuillotineMenuViewController: UIViewController, GuillotineAnimationDelegate {
+class GuillotineMenuViewController: UIViewController {
 
     var hostNavigationBarHeight: CGFloat!
     var hostTitleText: NSString!
@@ -67,7 +67,7 @@ class GuillotineMenuViewController: UIViewController, GuillotineAnimationDelegat
     
 // MARK: Actions
     func closeMenuButtonTapped() {
-        println("closed")
+        //println("closed")
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
