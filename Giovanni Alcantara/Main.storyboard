@@ -726,6 +726,15 @@ Each weekend I tried using new technologies that I have never used previously an
                                                     </mask>
                                                 </variation>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkZ-A5-brI">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="5AQ-of-k5U" eventType="touchUpInside" id="nPx-Gp-KM0"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.17254901960784313" green="0.50980392156862742" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -742,12 +751,16 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                             </constraint>
                                             <constraint firstAttribute="bottom" secondItem="uEJ-z9-MWb" secondAttribute="bottom" constant="78" id="DXS-E9-yBQ"/>
+                                            <constraint firstAttribute="width" secondItem="HkZ-A5-brI" secondAttribute="width" id="Ka6-Re-TUg"/>
                                             <constraint firstItem="Pwg-8n-Ebe" firstAttribute="leading" secondItem="uEJ-z9-MWb" secondAttribute="leading" id="NSI-Lb-bO1"/>
                                             <constraint firstItem="dcY-VH-88N" firstAttribute="top" secondItem="HRm-Bc-E9W" secondAttribute="top" constant="71" id="Ori-ui-MwN">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                             </constraint>
+                                            <constraint firstAttribute="height" secondItem="HkZ-A5-brI" secondAttribute="height" id="P3q-oz-uK1"/>
+                                            <constraint firstAttribute="centerX" secondItem="HkZ-A5-brI" secondAttribute="centerX" id="Pc6-4H-YeB"/>
                                             <constraint firstAttribute="trailing" secondItem="dcY-VH-88N" secondAttribute="trailing" constant="154" id="PcH-Oo-5PM"/>
                                             <constraint firstAttribute="trailing" secondItem="dcY-VH-88N" secondAttribute="trailing" constant="154" id="StK-kg-a78"/>
+                                            <constraint firstAttribute="centerY" secondItem="HkZ-A5-brI" secondAttribute="centerY" id="VqT-Jr-1cb"/>
                                             <constraint firstItem="dcY-VH-88N" firstAttribute="leading" secondItem="HRm-Bc-E9W" secondAttribute="leading" constant="115" id="aOQ-u4-58u"/>
                                             <constraint firstItem="dcY-VH-88N" firstAttribute="leading" secondItem="HRm-Bc-E9W" secondAttribute="leading" constant="115" id="cWb-jO-HG2">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -767,8 +780,13 @@ Each weekend I tried using new technologies that I have never used previously an
                                             <mask key="subviews">
                                                 <exclude reference="Pwg-8n-Ebe"/>
                                                 <exclude reference="uEJ-z9-MWb"/>
+                                                <exclude reference="HkZ-A5-brI"/>
                                             </mask>
                                             <mask key="constraints">
+                                                <exclude reference="Ka6-Re-TUg"/>
+                                                <exclude reference="P3q-oz-uK1"/>
+                                                <exclude reference="Pc6-4H-YeB"/>
+                                                <exclude reference="VqT-Jr-1cb"/>
                                                 <exclude reference="3KL-Yd-5Bq"/>
                                                 <exclude reference="6Ec-gc-0bi"/>
                                                 <exclude reference="7h2-CG-jxz"/>
@@ -793,8 +811,13 @@ Each weekend I tried using new technologies that I have never used previously an
                                             <mask key="subviews">
                                                 <include reference="Pwg-8n-Ebe"/>
                                                 <include reference="uEJ-z9-MWb"/>
+                                                <include reference="HkZ-A5-brI"/>
                                             </mask>
                                             <mask key="constraints">
+                                                <include reference="Ka6-Re-TUg"/>
+                                                <include reference="P3q-oz-uK1"/>
+                                                <include reference="Pc6-4H-YeB"/>
+                                                <include reference="VqT-Jr-1cb"/>
                                                 <exclude reference="3KL-Yd-5Bq"/>
                                                 <exclude reference="6Ec-gc-0bi"/>
                                                 <exclude reference="7h2-CG-jxz"/>
@@ -867,7 +890,7 @@ Each weekend I tried using new technologies that I have never used previously an
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GoWalkers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4y-dJ-NAW">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="GoWalkers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4y-dJ-NAW">
                                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="6aw-BB-yCa"/>
@@ -889,7 +912,7 @@ Each weekend I tried using new technologies that I have never used previously an
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Revolutionazing outdoor activities in Italy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZV-mV-7ju">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Revolutionazing outdoor activities in Italy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZV-mV-7ju">
                                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Z7l-bd-Tqe"/>
@@ -934,10 +957,6 @@ Each weekend I tried using new technologies that I have never used previously an
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="B7P-K0-eUX"/>
-                                                <exclude reference="RaK-Ch-up4"/>
-                                                <exclude reference="e7f-9Z-AuY"/>
-                                                <exclude reference="wqJ-ox-Ea7"/>
                                                 <exclude reference="NVY-Os-22X"/>
                                                 <exclude reference="SzB-lM-6ZR"/>
                                                 <exclude reference="Yxn-V0-hVl"/>
@@ -946,6 +965,10 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <exclude reference="gkA-O5-fgo"/>
                                                 <exclude reference="iPa-9E-Bse"/>
                                                 <exclude reference="wlF-c3-44V"/>
+                                                <exclude reference="B7P-K0-eUX"/>
+                                                <exclude reference="RaK-Ch-up4"/>
+                                                <exclude reference="e7f-9Z-AuY"/>
+                                                <exclude reference="wqJ-ox-Ea7"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -955,10 +978,6 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <include reference="YZV-mV-7ju"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="B7P-K0-eUX"/>
-                                                <exclude reference="RaK-Ch-up4"/>
-                                                <include reference="e7f-9Z-AuY"/>
-                                                <exclude reference="wqJ-ox-Ea7"/>
                                                 <include reference="NVY-Os-22X"/>
                                                 <include reference="SzB-lM-6ZR"/>
                                                 <include reference="Yxn-V0-hVl"/>
@@ -967,6 +986,10 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <include reference="gkA-O5-fgo"/>
                                                 <include reference="iPa-9E-Bse"/>
                                                 <include reference="wlF-c3-44V"/>
+                                                <include reference="B7P-K0-eUX"/>
+                                                <exclude reference="RaK-Ch-up4"/>
+                                                <include reference="e7f-9Z-AuY"/>
+                                                <exclude reference="wqJ-ox-Ea7"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -984,14 +1007,14 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="oFn-R3-Fc5"/>
                                                         <exclude reference="T4Z-rH-dL7"/>
+                                                        <exclude reference="oFn-R3-Fc5"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="oFn-R3-Fc5"/>
                                                         <include reference="T4Z-rH-dL7"/>
+                                                        <include reference="oFn-R3-Fc5"/>
                                                     </mask>
                                                 </variation>
                                             </label>
@@ -1014,7 +1037,7 @@ Each weekend I tried using new technologies that I have never used previously an
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="VerbaCore" translatesAutoresizingMaskIntoConstraints="NO" id="hhk-lL-8G5">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VerbaCore" translatesAutoresizingMaskIntoConstraints="NO" id="hhk-lL-8G5">
                                                 <rect key="frame" x="187" y="49" width="227" height="227"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" priority="800" constant="202" id="62C-Ae-bcm">
@@ -1037,28 +1060,28 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="qlv-iU-WkV"/>
                                                         <exclude reference="62C-Ae-bcm"/>
                                                         <exclude reference="Gy1-M7-cOp"/>
-                                                        <exclude reference="wEx-FP-qT2"/>
-                                                        <exclude reference="gwg-CJ-T4y"/>
-                                                        <exclude reference="gpN-NL-gAN"/>
-                                                        <exclude reference="c3T-cG-yqh"/>
-                                                        <exclude reference="tsw-Sq-yIX"/>
                                                         <exclude reference="Y8M-l2-qCc"/>
+                                                        <exclude reference="c3T-cG-yqh"/>
+                                                        <exclude reference="gpN-NL-gAN"/>
+                                                        <exclude reference="gwg-CJ-T4y"/>
+                                                        <exclude reference="qlv-iU-WkV"/>
+                                                        <exclude reference="tsw-Sq-yIX"/>
+                                                        <exclude reference="wEx-FP-qT2"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
-                                                        <exclude reference="qlv-iU-WkV"/>
                                                         <exclude reference="62C-Ae-bcm"/>
                                                         <exclude reference="Gy1-M7-cOp"/>
-                                                        <include reference="wEx-FP-qT2"/>
-                                                        <exclude reference="gwg-CJ-T4y"/>
-                                                        <exclude reference="gpN-NL-gAN"/>
-                                                        <exclude reference="c3T-cG-yqh"/>
-                                                        <exclude reference="tsw-Sq-yIX"/>
                                                         <include reference="Y8M-l2-qCc"/>
+                                                        <exclude reference="c3T-cG-yqh"/>
+                                                        <exclude reference="gpN-NL-gAN"/>
+                                                        <exclude reference="gwg-CJ-T4y"/>
+                                                        <exclude reference="qlv-iU-WkV"/>
+                                                        <exclude reference="tsw-Sq-yIX"/>
+                                                        <include reference="wEx-FP-qT2"/>
                                                     </mask>
                                                 </variation>
                                             </imageView>
@@ -1090,8 +1113,6 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <exclude reference="hhk-lL-8G5"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="HQE-Yf-qss"/>
-                                                <exclude reference="MrI-MA-dm4"/>
                                                 <exclude reference="Azi-Av-Okc"/>
                                                 <exclude reference="cmd-SH-oec"/>
                                                 <exclude reference="t3C-YS-r66"/>
@@ -1100,6 +1121,8 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <exclude reference="ohv-e9-Zvj"/>
                                                 <exclude reference="poV-YX-WCY"/>
                                                 <exclude reference="z57-Pe-yI4"/>
+                                                <exclude reference="HQE-Yf-qss"/>
+                                                <exclude reference="MrI-MA-dm4"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -1109,8 +1132,6 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <include reference="hhk-lL-8G5"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="HQE-Yf-qss"/>
-                                                <include reference="MrI-MA-dm4"/>
                                                 <include reference="Azi-Av-Okc"/>
                                                 <include reference="cmd-SH-oec"/>
                                                 <include reference="t3C-YS-r66"/>
@@ -1119,6 +1140,8 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <include reference="ohv-e9-Zvj"/>
                                                 <include reference="poV-YX-WCY"/>
                                                 <include reference="z57-Pe-yI4"/>
+                                                <include reference="HQE-Yf-qss"/>
+                                                <include reference="MrI-MA-dm4"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -1146,9 +1169,9 @@ Each weekend I tried using new technologies that I have never used previously an
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="BHj-m7-i7L"/>
                                         <exclude reference="2um-0P-iF5"/>
                                         <exclude reference="j27-eP-vPD"/>
+                                        <exclude reference="BHj-m7-i7L"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -1183,12 +1206,68 @@ Each weekend I tried using new technologies that I have never used previously an
                     </navigationItem>
                     <connections>
                         <outlet property="barButton" destination="aH0-JF-vZL" id="qtm-Ew-lLm"/>
+                        <outlet property="beaconCartView" destination="HRm-Bc-E9W" id="qlI-sE-4i5"/>
+                        <outlet property="goWalkersView" destination="RVd-w0-tgH" id="jwG-QD-RQW"/>
                         <outlet property="projectScrollView" destination="Cg2-g8-gpZ" id="YDR-Sd-lcm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJm-xH-JL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3345" y="936.75"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="zxc-vF-fQb">
+            <objects>
+                <viewController storyboardIdentifier="Test" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h31-LP-ixb" customClass="TestViewController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Baw-r3-w0q"/>
+                        <viewControllerLayoutGuide type="bottom" id="FjX-gL-xKi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T4k-oE-wfr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2v-aV-m92">
+                                <rect key="frame" x="48" y="194" width="280" height="280"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcj-TP-EgV">
+                                        <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                        <state key="normal" image="ic_settings"/>
+                                        <connections>
+                                            <action selector="closeButtonPressed:" destination="h31-LP-ixb" eventType="touchUpInside" id="v07-ws-sVp"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeaconCart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuI-dc-Ole">
+                                        <rect key="frame" x="-31" y="8" width="343" height="27"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.83529411760000005" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="yuI-dc-Ole" firstAttribute="centerX" secondItem="d2v-aV-m92" secondAttribute="centerX" id="3Yo-cT-XqM"/>
+                                    <constraint firstItem="tcj-TP-EgV" firstAttribute="leading" secondItem="d2v-aV-m92" secondAttribute="leadingMargin" id="D52-9e-liD"/>
+                                    <constraint firstItem="yuI-dc-Ole" firstAttribute="leading" secondItem="d2v-aV-m92" secondAttribute="leading" constant="-31" id="P4l-3c-Tsi"/>
+                                    <constraint firstAttribute="width" constant="280" id="mck-ok-igf"/>
+                                    <constraint firstAttribute="height" constant="280" id="n9t-aY-EqP"/>
+                                    <constraint firstItem="tcj-TP-EgV" firstAttribute="top" secondItem="yuI-dc-Ole" secondAttribute="top" id="nbL-2d-Qyw"/>
+                                    <constraint firstItem="yuI-dc-Ole" firstAttribute="top" secondItem="d2v-aV-m92" secondAttribute="top" constant="8" id="omI-xy-Ws7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="d2v-aV-m92" secondAttribute="centerY" id="Jcj-li-6QP"/>
+                            <constraint firstAttribute="centerX" secondItem="d2v-aV-m92" secondAttribute="centerX" id="sbo-bN-fte"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hIj-dl-lGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4166.25" y="1020.375"/>
         </scene>
     </scenes>
     <resources>

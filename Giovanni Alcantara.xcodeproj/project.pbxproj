@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F20AAA91AE6872D0095E13B /* JMBackgroundCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F20AAA81AE6872D0095E13B /* JMBackgroundCameraView.swift */; };
+		3F2D91CE1AE707F800F7763E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D91CD1AE707F800F7763E /* TestViewController.swift */; };
 		3F4B92BC1ADE94A1009CD7A0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B92B81ADE94A1009CD7A0 /* Extensions.swift */; };
 		3F4B92BD1ADE94A1009CD7A0 /* LogoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B92B91ADE94A1009CD7A0 /* LogoButton.swift */; };
 		3F4B92BE1ADE94A1009CD7A0 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B92BA1ADE94A1009CD7A0 /* Paths.swift */; };
@@ -17,7 +18,6 @@
 		3F751FAB1AE51DD200AD44D9 /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F751FA91AE51DD200AD44D9 /* PathMenu.swift */; };
 		3F751FAC1AE51DD200AD44D9 /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F751FAA1AE51DD200AD44D9 /* PathMenuItem.swift */; };
 		3F7D1E741AE6C79F00AA8EF6 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D1E731AE6C79F00AA8EF6 /* ProjectsViewController.swift */; };
-		3F7D1E791AE6CBFD00AA8EF6 /* JGFlipMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D1E761AE6CBFD00AA8EF6 /* JGFlipMenuItem.swift */; };
 		3F7D1E7A1AE6CBFD00AA8EF6 /* JGTransitionExpandContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D1E771AE6CBFD00AA8EF6 /* JGTransitionExpandContract.swift */; };
 		3F9912F11ADE5E2700470C65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9912F01ADE5E2700470C65 /* AppDelegate.swift */; };
 		3F9912F81ADE5E2700470C65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F9912F71ADE5E2700470C65 /* Images.xcassets */; };
@@ -47,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		3F20AAA81AE6872D0095E13B /* JMBackgroundCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMBackgroundCameraView.swift; sourceTree = "<group>"; };
+		3F2D91CD1AE707F800F7763E /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		3F4B92B81ADE94A1009CD7A0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3F4B92B91ADE94A1009CD7A0 /* LogoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoButton.swift; sourceTree = "<group>"; };
 		3F4B92BA1ADE94A1009CD7A0 /* Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		3F751FA91AE51DD200AD44D9 /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenu.swift; sourceTree = "<group>"; };
 		3F751FAA1AE51DD200AD44D9 /* PathMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenuItem.swift; sourceTree = "<group>"; };
 		3F7D1E731AE6C79F00AA8EF6 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
-		3F7D1E761AE6CBFD00AA8EF6 /* JGFlipMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JGFlipMenuItem.swift; sourceTree = "<group>"; };
 		3F7D1E771AE6CBFD00AA8EF6 /* JGTransitionExpandContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JGTransitionExpandContract.swift; sourceTree = "<group>"; };
 		3F9912EB1ADE5E2700470C65 /* Giovanni Alcantara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Giovanni Alcantara.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9912EF1ADE5E2700470C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F2D91CF1AE707FE00F7763E /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				3F2D91CD1AE707F800F7763E /* TestViewController.swift */,
+			);
+			name = Projects;
+			sourceTree = "<group>";
+		};
 		3F4B92C21ADE94EB009CD7A0 /* LogoButton Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +146,6 @@
 			children = (
 				3F751FAD1AE51DDB00AD44D9 /* HackathonPicker */,
 				3F4B92C31ADEAE67009CD7A0 /* Pulse.swift */,
-				3F7D1E761AE6CBFD00AA8EF6 /* JGFlipMenuItem.swift */,
 				3F7D1E771AE6CBFD00AA8EF6 /* JGTransitionExpandContract.swift */,
 				3F20AAA81AE6872D0095E13B /* JMBackgroundCameraView.swift */,
 				3FC762C51AE5A27600EAA47D /* FlipIt */,
@@ -149,6 +156,7 @@
 				3FEFE4511AE2EF970067AB34 /* PagesNavigationController.swift */,
 				3FC762BF1AE5A20B00EAA47D /* AboutCollectionViewController.swift */,
 				3F7D1E731AE6C79F00AA8EF6 /* ProjectsViewController.swift */,
+				3F2D91CF1AE707FE00F7763E /* Projects */,
 				3F4B92C01ADE94C7009CD7A0 /* Main.storyboard */,
 				3F9912F71ADE5E2700470C65 /* Images.xcassets */,
 				3F9912EE1ADE5E2700470C65 /* Supporting Files */,
@@ -308,6 +316,7 @@
 			files = (
 				3FF8E2271AE2997D00978C08 /* HelloViewController.swift in Sources */,
 				3F7D1E741AE6C79F00AA8EF6 /* ProjectsViewController.swift in Sources */,
+				3F2D91CE1AE707F800F7763E /* TestViewController.swift in Sources */,
 				3F7D1E7A1AE6CBFD00AA8EF6 /* JGTransitionExpandContract.swift in Sources */,
 				3FC762C31AE5A27000EAA47D /* ImageFactory.swift in Sources */,
 				3F751FAB1AE51DD200AD44D9 /* PathMenu.swift in Sources */,
@@ -324,7 +333,6 @@
 				3F4B92C41ADEAE67009CD7A0 /* Pulse.swift in Sources */,
 				3F4B92BC1ADE94A1009CD7A0 /* Extensions.swift in Sources */,
 				3F4B92BE1ADE94A1009CD7A0 /* Paths.swift in Sources */,
-				3F7D1E791AE6CBFD00AA8EF6 /* JGFlipMenuItem.swift in Sources */,
 				3FF0F5E81AE298860041A848 /* GuillotineMenuTransitionAnimation.swift in Sources */,
 				3F4B92BD1ADE94A1009CD7A0 /* LogoButton.swift in Sources */,
 			);
