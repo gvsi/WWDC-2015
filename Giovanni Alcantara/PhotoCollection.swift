@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+let UIColors = [
+    ("#55EFCB", "#5BCAFF"), ("#FF5E3A", "#FF2A68"), ("#FF9500", "#FF5E3A"), ("#87FC70", "#0BD318"), ("#52EDC7", "#5AC8FB"), ("#1AD6FD", "#1D62F0"), ("#C644FC", "#5856D6"), ("#1D77EF", "#81F3FD"), ("#55EFCB", "#5BCAFF")
+]
 
 struct Photo{
     var imageName: String
@@ -16,19 +19,29 @@ struct Photo{
     var text: String
     
     static func detailViewForCell(cell: UICollectionViewCell, atViewController viewController: UICollectionViewController) -> UIView{
-        let view = NSBundle.mainBundle().loadNibNamed("DetailView", owner: viewController, options: nil)[0] as? UIView
+        let view = NSBundle.mainBundle().loadNibNamed("DetailView", owner: viewController, options: nil)[0] as! UIView
+        
+        view.frame = cell.frame
+        view.frame.size.width = cell.frame.width * 2
         
         let indexPath = viewController.collectionView?.indexPathForCell(cell)
         
-        view?.backgroundColor = PhotoCollection.collection()[indexPath!.row].backgroundColor
+        //view.backgroundColor = PhotoCollection.collection()[indexPath!.row].backgroundColor
         
-        let detailViewLabel = view?.viewWithTag(1000) as! UILabel
+        var gradient = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.frame.size.width = cell.frame.width * 2
+        
+        var randomColors = UIColors[Int(arc4random_uniform(UInt32(UIColors.count)))]
+        gradient.colors = [UIColor(hex: randomColors.0).CGColor, UIColor(hex: randomColors.1).CGColor]
+        
+        view.layer.insertSublayer(gradient, atIndex: 0)
+        
+        let detailViewLabel = view.viewWithTag(1000) as! UILabel
         detailViewLabel.text = PhotoCollection.collection()[indexPath!.row].text
         
-        view?.frame = cell.frame
-        view?.frame.size.width = cell.frame.width * 2
         
-        return view!
+        return view
     }
 }
 
@@ -84,7 +97,7 @@ class PhotoCollection{
             Photo(
                 imageName: "10",
                 backgroundColor: UIColor(red:0.17, green:0.24, blue:0.31, alpha:1),
-                text: "Learning Swift after languages like Java, Haskell or Javascript was extremely satisfying as I saw the languages' best features condensed into one, to ultimately write the apps of the future."
+                text: "Learning Swift after languages like Java, Haskell or Javascript was extremely satisfying as I saw each language's best features condensed into one, to ultimately write the apps of the future."
             ),
             Photo(
                 imageName: "11",

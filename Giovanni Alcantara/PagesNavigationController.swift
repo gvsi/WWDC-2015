@@ -32,6 +32,9 @@ public class PagesNavigationController : UINavigationController {
                 case "Hackathons":
                     var newVC = mainStoryboard.instantiateViewControllerWithIdentifier("HackathonPage") as! UIViewController
                     self.viewControllers = [newVC]
+                case "Projects":
+                    var newVC = mainStoryboard.instantiateViewControllerWithIdentifier("ProjectsPage") as! UIViewController
+                    self.viewControllers = [newVC]
                 default:
                     break;
                 }
