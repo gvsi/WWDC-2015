@@ -74,6 +74,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="Za9-Fg-7CP" eventType="touchUpInside" id="oCp-jm-7cf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -101,12 +104,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSw-Pr-zEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1919" y="400"/>
+            <point key="canvasLocation" x="2079" y="256"/>
         </scene>
         <!--Hello-->
         <scene sceneID="0YW-bB-r1S">
             <objects>
-                <viewController id="q51-zX-cAF" customClass="HelloViewController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelloPage" id="q51-zX-cAF" customClass="HelloViewController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fqH-Ea-cAs"/>
                         <viewControllerLayoutGuide type="bottom" id="erh-mK-NMj"/>
@@ -323,7 +326,7 @@
         <!--Hackathons-->
         <scene sceneID="ieD-N7-467">
             <objects>
-                <viewController storyboardIdentifier="NewViewController" id="c8n-mb-vPo" customClass="HackathonViewController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HackathonPage" id="c8n-mb-vPo" customClass="HackathonViewController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nuP-s3-EkX"/>
                         <viewControllerLayoutGuide type="bottom" id="SAn-DG-aGC"/>
@@ -339,23 +342,23 @@
                                         <rect key="frame" x="0.0" y="30" width="600" height="554"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hack Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfh-Nf-9Bc">
-                                                <rect key="frame" x="17" y="266" width="575" height="23"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                <rect key="frame" x="17" y="266" width="575" height="26"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uja-A4-cOf">
-                                                <rect key="frame" x="17" y="289" width="575" height="20"/>
-                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                                <rect key="frame" x="17" y="292" width="575" height="22"/>
+                                                <fontDescription key="fontDescription" name="Avenir-BookOblique" family="Avenir" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="bE7-oT-yfS">
-                                                <rect key="frame" x="10" y="327" width="580" height="197"/>
+                                                <rect key="frame" x="10" y="332" width="580" height="192"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="200" verticalCompressionResistancePriority="700" image="Klix" translatesAutoresizingMaskIntoConstraints="NO" id="kt3-8Y-tV9">
@@ -430,7 +433,7 @@
                                                 <string key="text">The Hackathon Project is a personal challenge I set myself in October 2014. So far it involved six hackathons across the United Kingdom spanned in five weeks, thousand of lines of codes, few hours of sleep, numerous talented young developers with fresh perspectives and a lot of exuberance seeing the limitless possibilities of some lines of codes.
 Each weekend I tried using new technologies that I have never used previously and the whole experience was truly rewarding and gave me a further insight and understanding of Software Development.</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
@@ -496,7 +499,7 @@ Each weekend I tried using new technologies that I have never used previously an
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Za9-Fg-7CP" kind="custom" customClass="GuillotineMenuSegue" customModule="Giovanni_Alcantara" customModuleProvider="target" id="q2o-2M-RB1"/>
+                                    <segue destination="Za9-Fg-7CP" kind="custom" customClass="GuillotineMenuSegue" customModule="Giovanni_Alcantara" customModuleProvider="target" id="mKP-V0-SSu"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -510,14 +513,121 @@ Each weekend I tried using new technologies that I have never used previously an
                         <outlet property="hackNameLabel" destination="pfh-Nf-9Bc" id="Evw-VK-cFr"/>
                         <outlet property="hackView" destination="ryw-wL-lpq" id="Etq-HI-euC"/>
                         <outlet property="hackathonIntroView" destination="yEZ-Wf-W2Q" id="utN-6k-91Z"/>
+                        <segue destination="92G-Oq-bPd" kind="show" id="X1M-PA-dJd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUL-9J-dag" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1938" y="1216.5"/>
+            <point key="canvasLocation" x="1832" y="1182"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="uez-dL-f3e">
+            <objects>
+                <collectionViewController storyboardIdentifier="AboutPage" id="92G-Oq-bPd" customClass="AboutCollectionViewController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" id="FQu-i3-NBz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AS1-VD-HDq">
+                            <size key="itemSize" width="268" height="264"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="OLc-cX-QHr">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="268" height="264"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view hidden="YES" tag="2000" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="61I-9m-fGa">
+                                            <rect key="frame" x="0.0" y="0.0" width="268" height="264"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <imageView userInteractionEnabled="NO" tag="1000" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="7yJ-0y-uR7">
+                                            <rect key="frame" x="0.0" y="0.0" width="268" height="264"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="7yJ-0y-uR7" firstAttribute="top" secondItem="OLc-cX-QHr" secondAttribute="top" id="CeL-mF-QtM"/>
+                                    <constraint firstAttribute="trailing" secondItem="7yJ-0y-uR7" secondAttribute="trailing" id="N4l-rz-YDH"/>
+                                    <constraint firstItem="7yJ-0y-uR7" firstAttribute="leading" secondItem="OLc-cX-QHr" secondAttribute="leading" id="dc4-rj-W2r"/>
+                                    <constraint firstAttribute="bottom" secondItem="7yJ-0y-uR7" secondAttribute="bottom" id="zF4-c9-KmU"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zxC-nU-hYk" appends="YES" id="GQK-BK-C5z"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell2" id="bTb-LA-OS7">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="268" height="264"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" tag="1000" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="nV9-2I-jcZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="268" height="264"/>
+                                        </imageView>
+                                        <view tag="2000" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBW-pR-LRp">
+                                            <rect key="frame" x="0.0" y="0.0" width="268" height="264"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="nV9-2I-jcZ" secondAttribute="bottom" id="eAB-YW-6s9"/>
+                                    <constraint firstAttribute="trailing" secondItem="nV9-2I-jcZ" secondAttribute="trailing" id="jXs-CV-Uoo"/>
+                                    <constraint firstItem="nV9-2I-jcZ" firstAttribute="top" secondItem="bTb-LA-OS7" secondAttribute="top" id="rTk-uZ-ZY8"/>
+                                    <constraint firstItem="nV9-2I-jcZ" firstAttribute="leading" secondItem="bTb-LA-OS7" secondAttribute="leading" id="wTC-Mf-sFZ"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zxC-nU-hYk" appends="YES" id="y0o-rg-UHi"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="92G-Oq-bPd" id="174-OB-Ls4"/>
+                            <outlet property="delegate" destination="92G-Oq-bPd" id="vcs-NT-Vnh"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="About" id="Fwf-te-nUd">
+                        <barButtonItem key="leftBarButtonItem" id="r0H-w5-Q6g">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xmd-Ag-SSh">
+                                <rect key="frame" x="16" y="7" width="10" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_menuRotated">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Za9-Fg-7CP" kind="custom" customClass="GuillotineMenuSegue" customModule="Giovanni_Alcantara" customModuleProvider="target" id="aLz-Lc-FJB"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="barButton" destination="xmd-Ag-SSh" id="Oz8-XA-yeK"/>
+                        <outlet property="panRecognizer" destination="zxC-nU-hYk" id="gDd-ko-TbF"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PV5-Mm-Smr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="zxC-nU-hYk">
+                    <connections>
+                        <action selector="handleGesture:" destination="92G-Oq-bPd" id="FkV-Mo-9bM"/>
+                        <outlet property="delegate" destination="92G-Oq-bPd" id="nib-LE-yp6"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2532" y="1182"/>
         </scene>
     </scenes>
     <resources>
+        <image name="1" width="470" height="470"/>
         <image name="Code" width="300" height="300"/>
         <image name="Klix" width="769" height="525"/>
         <image name="ic_activity" width="25" height="19"/>
@@ -529,6 +639,6 @@ Each weekend I tried using new technologies that I have never used previously an
         <image name="profile_normal" width="1440" height="839"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="p7g-kM-mzl"/>
+        <segue reference="aLz-Lc-FJB"/>
     </inferredMetricsTieBreakers>
 </document>

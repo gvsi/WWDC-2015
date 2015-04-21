@@ -24,8 +24,18 @@ public class PagesNavigationController : UINavigationController {
             if let button = notification?.userInfo?["Button"] as? UIButton {
                 println("button is: \(button.titleLabel?.text)")
                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-                var newVC = mainStoryboard.instantiateViewControllerWithIdentifier("NewViewController") as! UIViewController
-                self.viewControllers = [newVC]
+                
+                switch button.titleLabel!.text! {
+                case "About":
+                    var newVC = mainStoryboard.instantiateViewControllerWithIdentifier("AboutPage") as! UIViewController
+                    self.viewControllers = [newVC]
+                case "Hackathons":
+                    var newVC = mainStoryboard.instantiateViewControllerWithIdentifier("HackathonPage") as! UIViewController
+                    self.viewControllers = [newVC]
+                default:
+                    break;
+                }
+                
             }
         }
     }

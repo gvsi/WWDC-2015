@@ -54,17 +54,6 @@ class GuillotineMenuViewController: UIViewController {
         }
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if let button = sender as? UIButton {
-//            self.dismissViewControllerAnimated(true, completion: nil)
-//            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-//            var newVC = [mainStoryboard.instantiateViewControllerWithIdentifier("NewViewController") as! UIViewController]
-//            var myNC = segue.destinationViewController as! UINavigationController
-//            myNC.viewControllers = newVC
-//        }
-//    }
-    
-    
 // MARK: Actions
     func closeMenuButtonTapped() {
         //println("closed")

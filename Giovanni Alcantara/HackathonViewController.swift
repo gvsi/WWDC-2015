@@ -102,20 +102,20 @@ class HackathonViewController : UIViewController, PathMenuDelegate {
     }
     
     func pathMenuWillAnimateOpen(menu: PathMenu) {
-        println("Menu will open!")
+        //println("Menu will open!")
         self.blackView?.backgroundColor = UIColor(red:0.0, green:0.0, blue:0.0, alpha:0.7)
     }
     
     func pathMenuWillAnimateClose(menu: PathMenu) {
-        println("Menu will close!")
+        //println("Menu will close!")
     }
     
     func pathMenuDidFinishAnimationOpen(menu: PathMenu) {
-        println("Menu was open!")
+        //println("Menu was open!")
     }
     
     func pathMenuDidFinishAnimationClose(menu: PathMenu) {
-        println("Menu was closed!")
+        //println("Menu was closed!")
         self.blackView?.backgroundColor = UIColor(hex: "#34495e")
     }
 
