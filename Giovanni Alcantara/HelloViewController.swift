@@ -14,6 +14,8 @@ class HelloViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var logoButton: LogoButton!
     @IBOutlet weak var barButton: UIButton!
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var arrowMenu: UIImageView!
     
     override func viewDidLoad() {
         
@@ -26,8 +28,7 @@ class HelloViewController: UIViewController {
         }
                 
         logoButton.layer.addPulse { builder in
-            //builder.borderColors = [UIColor(hex: "34495e").CGColor]
-            builder.borderColors = [UIColor.blackColor().CGColor]
+            builder.borderColors = [UIColor.whiteColor().CGColor]
             builder.backgroundColors = colorsWithHalfOpacity(builder.borderColors)
             builder.path = UIBezierPath(ovalInRect: self.logoButton.bounds).CGPath
             builder.duration *= 0.85
@@ -38,27 +39,23 @@ class HelloViewController: UIViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func activate(sender: LogoButton!) {
         
         self.logoButton.isActive = !self.logoButton.isActive
         
-        //self.logoButton.isActive = !self.logoButton.isActive
         let transitionOptions = UIViewAnimationOptions.TransitionCrossDissolve
         
         
         UIView.animateWithDuration(2.0, delay: 0.2, options: transitionOptions, animations: {
             self.backgroundImageView.alpha = 0.0
+            self.infoLabel.hidden = true
             }, completion: nil)
         
         UIView.animateWithDuration(2.0, delay: 0.0, options: transitionOptions, animations: {
             self.logoButton.alpha = 0.0
             }, completion: { [unowned self] finished in
                 self.navigationController?.setNavigationBarHidden(false, animated: true)
+                self.arrowMenu.hidden = false
         })
     }
     

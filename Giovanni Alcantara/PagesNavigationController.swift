@@ -25,18 +25,23 @@ public class PagesNavigationController : UINavigationController {
                 println("button is: \(button.titleLabel?.text)")
                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
                 
-                switch button.titleLabel!.text! {
-                case "About":
-                    var newVC = mainStoryboard.instantiateViewControllerWithIdentifier("AboutPage") as! UIViewController
+                if button.tag == 3 {
+                    var newVC = mainStoryboard.instantiateViewControllerWithIdentifier("HelloPage") as! UIViewController
                     self.viewControllers = [newVC]
-                case "Hackathons":
-                    var newVC = mainStoryboard.instantiateViewControllerWithIdentifier("HackathonPage") as! UIViewController
-                    self.viewControllers = [newVC]
-                case "Projects":
-                    var newVC = mainStoryboard.instantiateViewControllerWithIdentifier("ProjectsPage") as! UIViewController
-                    self.viewControllers = [newVC]
-                default:
-                    break;
+                } else {
+                    switch button.titleLabel!.text! {
+                    case " About Me":
+                        var newVC = mainStoryboard.instantiateViewControllerWithIdentifier("AboutPage") as! UIViewController
+                        self.viewControllers = [newVC]
+                    case "Hackathons":
+                        var newVC = mainStoryboard.instantiateViewControllerWithIdentifier("HackathonPage") as! UIViewController
+                        self.viewControllers = [newVC]
+                    case "Projects":
+                        var newVC = mainStoryboard.instantiateViewControllerWithIdentifier("ProjectsPage") as! UIViewController
+                        self.viewControllers = [newVC]
+                    default:
+                        break;
+                    }
                 }
                 
             }

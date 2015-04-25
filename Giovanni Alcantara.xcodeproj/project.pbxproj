@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3F20AAA91AE6872D0095E13B /* JMBackgroundCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F20AAA81AE6872D0095E13B /* JMBackgroundCameraView.swift */; };
-		3F2D91CE1AE707F800F7763E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D91CD1AE707F800F7763E /* TestViewController.swift */; };
 		3F4B92BC1ADE94A1009CD7A0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B92B81ADE94A1009CD7A0 /* Extensions.swift */; };
 		3F4B92BD1ADE94A1009CD7A0 /* LogoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B92B91ADE94A1009CD7A0 /* LogoButton.swift */; };
 		3F4B92BE1ADE94A1009CD7A0 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B92BA1ADE94A1009CD7A0 /* Paths.swift */; };
@@ -18,11 +17,21 @@
 		3F751FAB1AE51DD200AD44D9 /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F751FA91AE51DD200AD44D9 /* PathMenu.swift */; };
 		3F751FAC1AE51DD200AD44D9 /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F751FAA1AE51DD200AD44D9 /* PathMenuItem.swift */; };
 		3F7D1E741AE6C79F00AA8EF6 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D1E731AE6C79F00AA8EF6 /* ProjectsViewController.swift */; };
-		3F7D1E7A1AE6CBFD00AA8EF6 /* JGTransitionExpandContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D1E771AE6CBFD00AA8EF6 /* JGTransitionExpandContract.swift */; };
 		3F9912F11ADE5E2700470C65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9912F01ADE5E2700470C65 /* AppDelegate.swift */; };
 		3F9912F81ADE5E2700470C65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F9912F71ADE5E2700470C65 /* Images.xcassets */; };
 		3F9912FB1ADE5E2700470C65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9912F91ADE5E2700470C65 /* LaunchScreen.xib */; };
 		3F9913071ADE5E2700470C65 /* Giovanni_AlcantaraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9913061ADE5E2700470C65 /* Giovanni_AlcantaraTests.swift */; };
+		3F9CAEBD1AEC432800FCB73E /* Gooey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CAEB51AEC432800FCB73E /* Gooey.swift */; };
+		3F9CAEBE1AEC432800FCB73E /* GooeyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CAEB61AEC432800FCB73E /* GooeyItem.swift */; };
+		3F9CAEBF1AEC432800FCB73E /* BridgeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CAEB71AEC432800FCB73E /* BridgeLayer.swift */; };
+		3F9CAEC01AEC432800FCB73E /* GooeyLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CAEB81AEC432800FCB73E /* GooeyLayer.swift */; };
+		3F9CAEC11AEC432800FCB73E /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CAEB91AEC432800FCB73E /* SpringAnimation.swift */; };
+		3F9CAEC21AEC432800FCB73E /* Vectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CAEBA1AEC432800FCB73E /* Vectors.swift */; };
+		3F9CAEC31AEC432800FCB73E /* Cross.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CAEBB1AEC432800FCB73E /* Cross.swift */; };
+		3F9CAEC41AEC432800FCB73E /* p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9CAEBC1AEC432800FCB73E /* p@2x.png */; };
+		3FB8E8581AEAA73300C8CBF9 /* PathDynamicModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB8E8571AEAA73300C8CBF9 /* PathDynamicModal.swift */; };
+		3FB8E85B1AEAA9BD00C8CBF9 /* ImageModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB8E8591AEAA9BD00C8CBF9 /* ImageModalView.swift */; };
+		3FB8E85C1AEAA9BD00C8CBF9 /* ImageModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB8E85A1AEAA9BD00C8CBF9 /* ImageModalView.xib */; };
 		3FC762C01AE5A20B00EAA47D /* AboutCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC762BF1AE5A20B00EAA47D /* AboutCollectionViewController.swift */; };
 		3FC762C31AE5A27000EAA47D /* ImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC762C11AE5A27000EAA47D /* ImageFactory.swift */; };
 		3FC762C41AE5A27000EAA47D /* PhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC762C21AE5A27000EAA47D /* PhotoCollection.swift */; };
@@ -47,7 +56,6 @@
 
 /* Begin PBXFileReference section */
 		3F20AAA81AE6872D0095E13B /* JMBackgroundCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMBackgroundCameraView.swift; sourceTree = "<group>"; };
-		3F2D91CD1AE707F800F7763E /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		3F4B92B81ADE94A1009CD7A0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3F4B92B91ADE94A1009CD7A0 /* LogoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoButton.swift; sourceTree = "<group>"; };
 		3F4B92BA1ADE94A1009CD7A0 /* Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
@@ -57,7 +65,6 @@
 		3F751FA91AE51DD200AD44D9 /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenu.swift; sourceTree = "<group>"; };
 		3F751FAA1AE51DD200AD44D9 /* PathMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenuItem.swift; sourceTree = "<group>"; };
 		3F7D1E731AE6C79F00AA8EF6 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
-		3F7D1E771AE6CBFD00AA8EF6 /* JGTransitionExpandContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JGTransitionExpandContract.swift; sourceTree = "<group>"; };
 		3F9912EB1ADE5E2700470C65 /* Giovanni Alcantara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Giovanni Alcantara.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9912EF1ADE5E2700470C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F9912F01ADE5E2700470C65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +73,17 @@
 		3F9913001ADE5E2700470C65 /* Giovanni AlcantaraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Giovanni AlcantaraTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9913051ADE5E2700470C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F9913061ADE5E2700470C65 /* Giovanni_AlcantaraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Giovanni_AlcantaraTests.swift; sourceTree = "<group>"; };
+		3F9CAEB51AEC432800FCB73E /* Gooey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gooey.swift; sourceTree = "<group>"; };
+		3F9CAEB61AEC432800FCB73E /* GooeyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooeyItem.swift; sourceTree = "<group>"; };
+		3F9CAEB71AEC432800FCB73E /* BridgeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeLayer.swift; sourceTree = "<group>"; };
+		3F9CAEB81AEC432800FCB73E /* GooeyLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooeyLayer.swift; sourceTree = "<group>"; };
+		3F9CAEB91AEC432800FCB73E /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		3F9CAEBA1AEC432800FCB73E /* Vectors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vectors.swift; sourceTree = "<group>"; };
+		3F9CAEBB1AEC432800FCB73E /* Cross.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cross.swift; sourceTree = "<group>"; };
+		3F9CAEBC1AEC432800FCB73E /* p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p@2x.png"; sourceTree = "<group>"; };
+		3FB8E8571AEAA73300C8CBF9 /* PathDynamicModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathDynamicModal.swift; sourceTree = "<group>"; };
+		3FB8E8591AEAA9BD00C8CBF9 /* ImageModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModalView.swift; sourceTree = "<group>"; };
+		3FB8E85A1AEAA9BD00C8CBF9 /* ImageModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageModalView.xib; sourceTree = "<group>"; };
 		3FC762BF1AE5A20B00EAA47D /* AboutCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCollectionViewController.swift; sourceTree = "<group>"; };
 		3FC762C11AE5A27000EAA47D /* ImageFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFactory.swift; sourceTree = "<group>"; };
 		3FC762C21AE5A27000EAA47D /* PhotoCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollection.swift; sourceTree = "<group>"; };
@@ -96,14 +114,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F2D91CF1AE707FE00F7763E /* Projects */ = {
-			isa = PBXGroup;
-			children = (
-				3F2D91CD1AE707F800F7763E /* TestViewController.swift */,
-			);
-			name = Projects;
-			sourceTree = "<group>";
-		};
 		3F4B92C21ADE94EB009CD7A0 /* LogoButton Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,8 +156,11 @@
 			children = (
 				3F751FAD1AE51DDB00AD44D9 /* HackathonPicker */,
 				3F4B92C31ADEAE67009CD7A0 /* Pulse.swift */,
-				3F7D1E771AE6CBFD00AA8EF6 /* JGTransitionExpandContract.swift */,
+				3FB8E8571AEAA73300C8CBF9 /* PathDynamicModal.swift */,
+				3FB8E8591AEAA9BD00C8CBF9 /* ImageModalView.swift */,
+				3FB8E85A1AEAA9BD00C8CBF9 /* ImageModalView.xib */,
 				3F20AAA81AE6872D0095E13B /* JMBackgroundCameraView.swift */,
+				3F9CAEB41AEC431100FCB73E /* ProjectImagePicker */,
 				3FC762C51AE5A27600EAA47D /* FlipIt */,
 				3FF0F5E21AE2987A0041A848 /* Menu */,
 				3F4B92C21ADE94EB009CD7A0 /* LogoButton Files */,
@@ -156,7 +169,6 @@
 				3FEFE4511AE2EF970067AB34 /* PagesNavigationController.swift */,
 				3FC762BF1AE5A20B00EAA47D /* AboutCollectionViewController.swift */,
 				3F7D1E731AE6C79F00AA8EF6 /* ProjectsViewController.swift */,
-				3F2D91CF1AE707FE00F7763E /* Projects */,
 				3F4B92C01ADE94C7009CD7A0 /* Main.storyboard */,
 				3F9912F71ADE5E2700470C65 /* Images.xcassets */,
 				3F9912EE1ADE5E2700470C65 /* Supporting Files */,
@@ -189,6 +201,21 @@
 				3F9913051ADE5E2700470C65 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F9CAEB41AEC431100FCB73E /* ProjectImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				3F9CAEB51AEC432800FCB73E /* Gooey.swift */,
+				3F9CAEB61AEC432800FCB73E /* GooeyItem.swift */,
+				3F9CAEB71AEC432800FCB73E /* BridgeLayer.swift */,
+				3F9CAEB81AEC432800FCB73E /* GooeyLayer.swift */,
+				3F9CAEB91AEC432800FCB73E /* SpringAnimation.swift */,
+				3F9CAEBA1AEC432800FCB73E /* Vectors.swift */,
+				3F9CAEBB1AEC432800FCB73E /* Cross.swift */,
+				3F9CAEBC1AEC432800FCB73E /* p@2x.png */,
+			);
+			name = ProjectImagePicker;
 			sourceTree = "<group>";
 		};
 		3FC762C51AE5A27600EAA47D /* FlipIt */ = {
@@ -297,6 +324,8 @@
 				3FDE00231AE5A9370086F533 /* DetailView.xib in Resources */,
 				3F9912FB1ADE5E2700470C65 /* LaunchScreen.xib in Resources */,
 				3F9912F81ADE5E2700470C65 /* Images.xcassets in Resources */,
+				3FB8E85C1AEAA9BD00C8CBF9 /* ImageModalView.xib in Resources */,
+				3F9CAEC41AEC432800FCB73E /* p@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,16 +345,22 @@
 			files = (
 				3FF8E2271AE2997D00978C08 /* HelloViewController.swift in Sources */,
 				3F7D1E741AE6C79F00AA8EF6 /* ProjectsViewController.swift in Sources */,
-				3F2D91CE1AE707F800F7763E /* TestViewController.swift in Sources */,
-				3F7D1E7A1AE6CBFD00AA8EF6 /* JGTransitionExpandContract.swift in Sources */,
 				3FC762C31AE5A27000EAA47D /* ImageFactory.swift in Sources */,
 				3F751FAB1AE51DD200AD44D9 /* PathMenu.swift in Sources */,
+				3F9CAEC31AEC432800FCB73E /* Cross.swift in Sources */,
 				3FF0F5EA1AE298860041A848 /* UIViewExtension.swift in Sources */,
+				3F9CAEC01AEC432800FCB73E /* GooeyLayer.swift in Sources */,
 				3FC762C01AE5A20B00EAA47D /* AboutCollectionViewController.swift in Sources */,
 				3FF0F5E91AE298860041A848 /* GuillotineMenuViewController.swift in Sources */,
 				3FF0F5E71AE298860041A848 /* GuillotineMenuSegue.swift in Sources */,
 				3F751FA81AE4766100AD44D9 /* HackathonViewController.swift in Sources */,
 				3F20AAA91AE6872D0095E13B /* JMBackgroundCameraView.swift in Sources */,
+				3F9CAEBE1AEC432800FCB73E /* GooeyItem.swift in Sources */,
+				3FB8E8581AEAA73300C8CBF9 /* PathDynamicModal.swift in Sources */,
+				3F9CAEBD1AEC432800FCB73E /* Gooey.swift in Sources */,
+				3FB8E85B1AEAA9BD00C8CBF9 /* ImageModalView.swift in Sources */,
+				3F9CAEC11AEC432800FCB73E /* SpringAnimation.swift in Sources */,
+				3F9CAEC21AEC432800FCB73E /* Vectors.swift in Sources */,
 				3F9912F11ADE5E2700470C65 /* AppDelegate.swift in Sources */,
 				3FC762C41AE5A27000EAA47D /* PhotoCollection.swift in Sources */,
 				3FEFE4521AE2EF970067AB34 /* PagesNavigationController.swift in Sources */,
@@ -334,6 +369,7 @@
 				3F4B92BC1ADE94A1009CD7A0 /* Extensions.swift in Sources */,
 				3F4B92BE1ADE94A1009CD7A0 /* Paths.swift in Sources */,
 				3FF0F5E81AE298860041A848 /* GuillotineMenuTransitionAnimation.swift in Sources */,
+				3F9CAEBF1AEC432800FCB73E /* BridgeLayer.swift in Sources */,
 				3F4B92BD1ADE94A1009CD7A0 /* LogoButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
