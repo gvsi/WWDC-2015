@@ -1,8 +1,8 @@
 //
 //  BridgeLayer.swift
-//  Gooey2
+//  Giovanni Alcantara
 //
-//  Created by Pål Forsberg on 2015-02-19.
+//  Created by Pål Forsberg on 2015-02-18.
 //  Copyright (c) 2015 Pål Forsberg. All rights reserved.
 //
 
@@ -116,9 +116,6 @@ class BridgeLayer: CALayer {
         CGPathAddEllipseInRect(path, nil, CGRect(x: p1.x, y: p1.y-22, width: ballsize, height: ballsize))
         
         if(percent < 0.82 && percent > 0){
-            //  p1------p2
-            //   p6    p3
-            //p5__________p4
             let curve : CGFloat = 3
             let curveInset : CGFloat = 0
             let p : CGFloat = percent

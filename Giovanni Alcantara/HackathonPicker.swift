@@ -1,6 +1,6 @@
 //
-//  PathMenu.swift
-//  PathMenu
+//  HackathonPicker.swift
+//  Giovanni Alcantara
 //
 //  Created by pixyzehn on 12/27/14.
 //  Copyright (c) 2014 pixyzehn. All rights reserved.
@@ -9,28 +9,28 @@
 import Foundation
 import UIKit
 
-@objc public protocol PathMenuDelegate:NSObjectProtocol {
-    optional func pathMenu(menu: PathMenu, didSelectIndex idx: Int)
-    optional func pathMenuDidFinishAnimationClose(menu: PathMenu)
-    optional func pathMenuDidFinishAnimationOpen(menu: PathMenu)
-    optional func pathMenuWillAnimateOpen(menu: PathMenu)
-    optional func pathMenuWillAnimateClose(menu: PathMenu)
+@objc public protocol HackathonPickerDelegate:NSObjectProtocol {
+    optional func hackathonPicker(menu: HackathonPicker, didSelectIndex idx: Int)
+    optional func hackathonPickerDidFinishAnimationClose(menu: HackathonPicker)
+    optional func hackathonPickerDidFinishAnimationOpen(menu: HackathonPicker)
+    optional func hackathonPickerWillAnimateOpen(menu: HackathonPicker)
+    optional func hackathonPickerWillAnimateClose(menu: HackathonPicker)
 }
 
-public let kPathMenuDefaultNearRadius: CGFloat = 110.0
-public let kPathMenuDefaultEndRadius: CGFloat = 120.0
-public let kPathMenuDefaultFarRadius: CGFloat = 140.0
-public let kPathMenuDefaultStartPointX: CGFloat = UIScreen.mainScreen().bounds.width/2
-public let kPathMenuDefaultStartPointY: CGFloat = UIScreen.mainScreen().bounds.height/2
-public let kPathMenuDefaultTimeOffset: CGFloat = 0.036
-public let kPathMenuDefaultRotateAngle: CGFloat = 0.0
-public let kPathMenuDefaultMenuWholeAngle: CGFloat = CGFloat(M_PI) * 2
-public let kPathMenuDefaultExpandRotation: CGFloat = -CGFloat(M_PI) * 2
-public let kPathMenuDefaultCloseRotation: CGFloat = CGFloat(M_PI) * 2
-public let kPathMenuDefaultAnimationDuration: CGFloat = 0.5
-public let kPathMenuDefaultExpandRotateAnimationDuration: CGFloat = 2.0
-public let kPathMenuDefaultCloseRotateAnimationDuration: CGFloat = 1.0
-public let kPathMenuStartMenuDefaultAnimationDuration: CGFloat = 0.2
+public let kHackathonPickerDefaultNearRadius: CGFloat = 110.0
+public let kHackathonPickerDefaultEndRadius: CGFloat = 120.0
+public let kHackathonPickerDefaultFarRadius: CGFloat = 140.0
+public let kHackathonPickerDefaultStartPointX: CGFloat = UIScreen.mainScreen().bounds.width/2
+public let kHackathonPickerDefaultStartPointY: CGFloat = UIScreen.mainScreen().bounds.height/2
+public let kHackathonPickerDefaultTimeOffset: CGFloat = 0.036
+public let kHackathonPickerDefaultRotateAngle: CGFloat = 0.0
+public let kHackathonPickerDefaultMenuWholeAngle: CGFloat = CGFloat(M_PI) * 2
+public let kHackathonPickerDefaultExpandRotation: CGFloat = -CGFloat(M_PI) * 2
+public let kHackathonPickerDefaultCloseRotation: CGFloat = CGFloat(M_PI) * 2
+public let kHackathonPickerDefaultAnimationDuration: CGFloat = 0.5
+public let kHackathonPickerDefaultExpandRotateAnimationDuration: CGFloat = 2.0
+public let kHackathonPickerDefaultCloseRotateAnimationDuration: CGFloat = 1.0
+public let kHackathonPickerStartMenuDefaultAnimationDuration: CGFloat = 0.2
 
 private func RotateCGPointAroundCenter(point: CGPoint, center:CGPoint, angle: CGFloat) -> CGPoint {
     let translation: CGAffineTransform = CGAffineTransformMakeTranslation(center.x, center.y)
@@ -39,7 +39,7 @@ private func RotateCGPointAroundCenter(point: CGPoint, center:CGPoint, angle: CG
     return CGPointApplyAffineTransform(point, transformGroup)
 }
 
-public class PathMenu: UIView, PathMenuItemDelegate {
+public class HackathonPicker: UIView, HackathonPickerItemDelegate {
    
     public enum State {
         case Close // Intial state
@@ -54,26 +54,26 @@ public class PathMenu: UIView, PathMenuItemDelegate {
         super.init(frame: frame)
     }
     
-    convenience public init(frame: CGRect!, startItem: PathMenuItem?, optionMenus aMenusArray:[PathMenuItem]?) {
+    convenience public init(frame: CGRect!, startItem: HackathonPickerItem?, optionMenus aMenusArray:[HackathonPickerItem]?) {
         self.init(frame: frame)
         
         self.backgroundColor = UIColor.clearColor()
         
-        self.timeOffset = kPathMenuDefaultTimeOffset
-        self.rotateAngle = kPathMenuDefaultRotateAngle
-        self.menuWholeAngle = kPathMenuDefaultMenuWholeAngle
-        self.startPoint = CGPointMake(kPathMenuDefaultStartPointX, kPathMenuDefaultStartPointY)
-        self.expandRotation = kPathMenuDefaultExpandRotation
-        self.closeRotation = kPathMenuDefaultCloseRotation
-        self.animationDuration = kPathMenuDefaultAnimationDuration
-        self.expandRotateAnimationDuration = kPathMenuDefaultExpandRotateAnimationDuration
-        self.closeRotateAnimationDuration = kPathMenuDefaultCloseRotateAnimationDuration
-        self.startMenuAnimationDuration = kPathMenuStartMenuDefaultAnimationDuration
+        self.timeOffset = kHackathonPickerDefaultTimeOffset
+        self.rotateAngle = kHackathonPickerDefaultRotateAngle
+        self.menuWholeAngle = kHackathonPickerDefaultMenuWholeAngle
+        self.startPoint = CGPointMake(kHackathonPickerDefaultStartPointX, kHackathonPickerDefaultStartPointY)
+        self.expandRotation = kHackathonPickerDefaultExpandRotation
+        self.closeRotation = kHackathonPickerDefaultCloseRotation
+        self.animationDuration = kHackathonPickerDefaultAnimationDuration
+        self.expandRotateAnimationDuration = kHackathonPickerDefaultExpandRotateAnimationDuration
+        self.closeRotateAnimationDuration = kHackathonPickerDefaultCloseRotateAnimationDuration
+        self.startMenuAnimationDuration = kHackathonPickerStartMenuDefaultAnimationDuration
         self.rotateAddButton = true
         
-        self.nearRadius = kPathMenuDefaultNearRadius
-        self.endRadius = kPathMenuDefaultEndRadius
-        self.farRadius = kPathMenuDefaultFarRadius
+        self.nearRadius = kHackathonPickerDefaultNearRadius
+        self.endRadius = kHackathonPickerDefaultEndRadius
+        self.farRadius = kHackathonPickerDefaultFarRadius
  
         self.menusArray = aMenusArray!
         
@@ -85,8 +85,8 @@ public class PathMenu: UIView, PathMenuItemDelegate {
         self.addSubview(self.startButton)
     }
 
-    private var _menusArray: [PathMenuItem] = []
-    public var menusArray: [PathMenuItem] {
+    private var _menusArray: [HackathonPickerItem] = []
+    public var menusArray: [HackathonPickerItem] {
         get {
             return self._menusArray
         }
@@ -100,8 +100,8 @@ public class PathMenu: UIView, PathMenuItemDelegate {
         }
     }
     
-    private var _startButton: PathMenuItem = PathMenuItem(frame: CGRectZero)
-    public var startButton: PathMenuItem {
+    private var _startButton: HackathonPickerItem = HackathonPickerItem(frame: CGRectZero)
+    public var startButton: HackathonPickerItem {
         get {
             return self._startButton
         }
@@ -110,7 +110,7 @@ public class PathMenu: UIView, PathMenuItemDelegate {
         }
     }
     
-    public weak var delegate: PathMenuDelegate!
+    public weak var delegate: HackathonPickerDelegate!
 
     public var flag: Int?
     public var timer: NSTimer?
@@ -196,10 +196,10 @@ public class PathMenu: UIView, PathMenuItemDelegate {
     override public func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
         if let animId: AnyObject = anim.valueForKey("id") {
             if (animId.isEqual("lastAnimation")) {
-                self.delegate?.pathMenuDidFinishAnimationClose?(self)
+                self.delegate?.hackathonPickerDidFinishAnimationClose?(self)
             }
             if (animId.isEqual("firstAnimation")) {
-                self.delegate?.pathMenuDidFinishAnimationOpen?(self)
+                self.delegate?.hackathonPickerDidFinishAnimationOpen?(self)
             }
         }
     }
@@ -211,15 +211,15 @@ public class PathMenu: UIView, PathMenuItemDelegate {
     }
     
     
-    // PathMenuItemDelegate
+    // HackathonPickerItemDelegate
     
-    public func PathMenuItemTouchesBegan(item: PathMenuItem) {
+    public func HackathonPickerItemTouchesBegan(item: HackathonPickerItem) {
         if (item == self.startButton) {
             self.handleTap()
         }
     }
     
-    public func PathMenuItemTouchesEnd(item:PathMenuItem) {
+    public func HackathonPickerItemTouchesEnd(item:HackathonPickerItem) {
         
         if (item == self.startButton) {
             return
@@ -230,7 +230,7 @@ public class PathMenu: UIView, PathMenuItemDelegate {
         item.center = item.startPoint!
         
         for (var i = 0; i < self.menusArray.count; i++) {
-            let otherItem: PathMenuItem = self.menusArray[i] as PathMenuItem
+            let otherItem: HackathonPickerItem = self.menusArray[i] as HackathonPickerItem
             let shrink: CAAnimationGroup = self.shrinkAnimationAtPoint(otherItem.center)
             if (otherItem.tag == item.tag) {
                 continue
@@ -240,14 +240,14 @@ public class PathMenu: UIView, PathMenuItemDelegate {
         }
         
         self.motionState = State.Close
-        self.delegate?.pathMenuWillAnimateClose?(self)
+        self.delegate?.hackathonPickerWillAnimateClose?(self)
         
         let angle: CGFloat = self.motionState == State.Expand ? CGFloat(M_PI_4) + CGFloat(M_PI) : 0.0
         UIView.animateWithDuration(Double(self.startMenuAnimationDuration!), animations: {() -> Void in
             self.startButton.transform = CGAffineTransformMakeRotation(angle)
         })
         
-        self.delegate?.pathMenu?(self, didSelectIndex: item.tag - 1000)
+        self.delegate?.hackathonPicker?(self, didSelectIndex: item.tag - 1000)
     }
     
     // Animation, Position
@@ -260,13 +260,13 @@ public class PathMenu: UIView, PathMenuItemDelegate {
         switch state {
         case .Close:
             self.setMenu()
-            self.delegate?.pathMenuWillAnimateOpen?(self)
+            self.delegate?.hackathonPickerWillAnimateOpen?(self)
             selector = "expand"
             self.flag = 0
             self.motionState = State.Expand
             angle = CGFloat(M_PI_4) + CGFloat(M_PI)
         case .Expand:
-            self.delegate?.pathMenuWillAnimateClose?(self)
+            self.delegate?.hackathonPickerWillAnimateClose?(self)
             selector = "close"
             self.flag = self.menusArray.count - 1
             self.motionState = State.Close
@@ -294,7 +294,7 @@ public class PathMenu: UIView, PathMenuItemDelegate {
         }
         
         let tag: Int = 1000 + self.flag!
-        var item: PathMenuItem = self.viewWithTag(tag) as! PathMenuItem
+        var item: HackathonPickerItem = self.viewWithTag(tag) as! HackathonPickerItem
         
         let rotateAnimation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
         rotateAnimation.values = [NSNumber(float: 0.0), NSNumber(float: Float(self.expandRotation!)), NSNumber(float: 0.0)]
@@ -337,7 +337,7 @@ public class PathMenu: UIView, PathMenuItemDelegate {
         }
         
         let tag :Int = 1000 + self.flag!
-        var item: PathMenuItem = self.viewWithTag(tag) as! PathMenuItem
+        var item: HackathonPickerItem = self.viewWithTag(tag) as! HackathonPickerItem
         
         let rotateAnimation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
         rotateAnimation.values = [NSNumber(float: 0.0), NSNumber(float: Float(self.closeRotation!)), NSNumber(float: 0.0)]
@@ -374,7 +374,7 @@ public class PathMenu: UIView, PathMenuItemDelegate {
         var denominator: Int?
         
         for (var i = 0; i < self.menusArray.count; i++) {
-            var item: PathMenuItem = self.menusArray[i]
+            var item: HackathonPickerItem = self.menusArray[i]
             item.tag = 1000 + i
             item.startPoint = self.startPoint
             

@@ -1,9 +1,9 @@
 //
 //  ImageSplitter.swift
-//  CollectionViewAnimation
+//  Giovanni Alcantara
 //
-//  Created by Mohamed Said on 4/8/15.
-//  Copyright (c) 2015 Mohamed Said. All rights reserved.
+//  Created by Giovanni Alcantara on 2015-04-25.
+//  Copyright (c) 2015 Giovanni Alcantara. All rights reserved.
 //
 
 import Foundation

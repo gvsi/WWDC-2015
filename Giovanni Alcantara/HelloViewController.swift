@@ -61,7 +61,7 @@ class HelloViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Your Menu View Controller vew must know the following data for the proper animation
-        let destinationVC = segue.destinationViewController as! GuillotineMenuViewController
+        let destinationVC = segue.destinationViewController as! MainMenuViewController
         destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
         destinationVC.hostTitleText = self.navigationItem.title
         destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor

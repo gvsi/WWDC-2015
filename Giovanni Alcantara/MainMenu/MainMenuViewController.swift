@@ -1,6 +1,6 @@
 //
 //  GuillotineViewController.swift
-//  GuillotineMenu
+//  MainMenu
 //
 //  Created by Maksym Lazebnyi on 3/24/15.
 //  Copyright (c) 2015 Yalantis. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GuillotineMenuViewController: UIViewController {
+class MainMenuViewController: UIViewController {
 
     var hostNavigationBarHeight: CGFloat!
     var hostTitleText: NSString!
@@ -93,7 +93,7 @@ class GuillotineMenuViewController: UIViewController {
 
 }
 
-extension GuillotineMenuViewController: GuillotineAnimationProtocol {
+extension MainMenuViewController: GuillotineAnimationProtocol {
 
     func anchorPoint() -> CGPoint {
         if UIDevice.currentDevice().orientation == .LandscapeLeft || UIDevice.currentDevice().orientation == .LandscapeRight {
@@ -116,7 +116,7 @@ extension GuillotineMenuViewController: GuillotineAnimationProtocol {
     }
 }
 
-extension GuillotineMenuViewController {
+extension MainMenuViewController {
     @IBAction func buttonPressed(sender: UIButton) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.application(handleMenuChangeWithButton: sender)

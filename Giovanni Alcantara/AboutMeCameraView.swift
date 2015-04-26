@@ -1,9 +1,9 @@
 //
-//  JMBackgroundCameraView.swift
-//  JMSwiftBackgroundCameraView
+//  AboutMeCameraView.swift
+//  Giovanni Alcantara
 //
-//  Created by Joan Molinas on 2/11/14.
-//  Copyright (c) 2014 joan molinas ramon. All rights reserved.
+//  Created by Giovanni Alcantara on 2015-04-25.
+//  Copyright (c) 2015 Giovanni Alcantara. All rights reserved.
 //
 
 import Foundation
@@ -14,7 +14,7 @@ enum DevicePosition : Int {
     case Front
     case Back
 }
-class JMBackgroundCameraView: UIView {
+class AboutMeCameraView: UIView {
     
     var session = AVCaptureSession()
     var input = AVCaptureDeviceInput()

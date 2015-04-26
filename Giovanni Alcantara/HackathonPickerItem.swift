@@ -1,6 +1,6 @@
 //
-//  PathMenuItem.swift
-//  PathMenu
+//  HackathonPickerItem.swift
+//  Giovanni Alcantara
 //
 //  Created by pixyzehn on 12/27/14.
 //  Copyright (c) 2014 pixyzehn. All rights reserved.
@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-@objc public protocol PathMenuItemDelegate: NSObjectProtocol {
-    func PathMenuItemTouchesBegan(item: PathMenuItem)
-    func PathMenuItemTouchesEnd(item:PathMenuItem)
+@objc public protocol HackathonPickerItemDelegate: NSObjectProtocol {
+    func HackathonPickerItemTouchesBegan(item: HackathonPickerItem)
+    func HackathonPickerItemTouchesEnd(item:HackathonPickerItem)
 }
 
-public class PathMenuItem: UIImageView {
+public class HackathonPickerItem: UIImageView {
     
     public var contentImageView: UIImageView?
     public var startPoint: CGPoint?
@@ -22,7 +22,7 @@ public class PathMenuItem: UIImageView {
     public var nearPoint: CGPoint?
     public var farPoint: CGPoint?
     
-    public weak var delegate: PathMenuItemDelegate!
+    public weak var delegate: HackathonPickerItemDelegate!
     
     private var _highlighted: Bool = false
     override public var highlighted: Bool {
@@ -77,8 +77,8 @@ public class PathMenuItem: UIImageView {
     
     override public func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.highlighted = true
-        if self.delegate.respondsToSelector("PathMenuItemTouchesBegan:") {
-            self.delegate.PathMenuItemTouchesBegan(self)
+        if self.delegate.respondsToSelector("HackathonPickerItemTouchesBegan:") {
+            self.delegate.HackathonPickerItemTouchesBegan(self)
         }
     }
     
@@ -100,7 +100,7 @@ public class PathMenuItem: UIImageView {
         if let loc = location {
             if (CGRectContainsPoint(ScaleRect(self.bounds, n: 2.0), loc))
             {
-                self.delegate.PathMenuItemTouchesEnd(self)
+                self.delegate.HackathonPickerItemTouchesEnd(self)
             }
         }
     }

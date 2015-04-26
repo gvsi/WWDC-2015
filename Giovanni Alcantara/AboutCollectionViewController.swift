@@ -1,9 +1,9 @@
 //
-//  CollectionViewController.swift
-//  CollectionViewAnimation
+//  AboutCollectionViewController
+//  Giovanni Alcantara
 //
-//  Created by Mohamed Said on 4/6/15.
-//  Copyright (c) 2015 Mohamed Said. All rights reserved.
+//  Created by Giovanni Alcantara on 19/04/2015.
+//  Copyright (c) 2015 Giovanni Alcantara. All rights reserved.
 //
 
 import UIKit
@@ -26,7 +26,7 @@ class AboutCollectionViewController: UICollectionViewController, UICollectionVie
     var firstImageOfDetailView: UIImageView?
     var lastImageOfDetailView: UIImageView?
     
-    var photos: [Photo] = PhotoCollection.collection()
+    var photos: [AboutMeDetail] = AboutMeCollection.collection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +71,7 @@ class AboutCollectionViewController: UICollectionViewController, UICollectionVie
             cellBeingOpened?.alpha = 0
             view.addSubview(imageOfCellBeingOpened!)
             
-            detailViewOfCellBeingOpened = Photo.detailViewForCell(cellBeingOpened!, atViewController: self)
+            detailViewOfCellBeingOpened = AboutMeDetail.detailViewForCell(cellBeingOpened!, atViewController: self)
             
             // We take a snapshot of the detail view and split it into two parts
             let imagesOfDetailViewParts = ImageFactory.split(
@@ -287,12 +287,12 @@ extension AboutCollectionViewController{
         var view = cell.viewWithTag(2000)!
         
         if indexPath.row != 11 {
-            let photo = photos[indexPath.row] as Photo
+            let photo = photos[indexPath.row] as AboutMeDetail
             imageView.image = UIImage(named: photo.imageName)
         } else {
             var view = cell.viewWithTag(2000)!
             dispatch_async(dispatch_get_main_queue(),{
-                var cameraView = JMBackgroundCameraView(frame: view.frame, position: DevicePosition.Front, blur: UIBlurEffectStyle.Dark)
+                var cameraView = AboutMeCameraView(frame: view.frame, position: DevicePosition.Front, blur: UIBlurEffectStyle.Dark)
                 cameraView.removeBlurEffect()
                 view.addSubview(cameraView)
             })
@@ -319,7 +319,7 @@ extension AboutCollectionViewController{
     //segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Your Menu View Controller vew must know the following data for the proper animation
-        let destinationVC = segue.destinationViewController as! GuillotineMenuViewController
+        let destinationVC = segue.destinationViewController as! MainMenuViewController
         destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
         destinationVC.hostTitleText = self.navigationItem.title
         destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor

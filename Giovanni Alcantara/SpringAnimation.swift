@@ -45,7 +45,7 @@ class SpringAnimation {
     
     /*****SPRING******/
     
-    class func animate(layer: GooeyLayer,
+    class func animate(layer: ImagePickerLayer,
         keypath: String,
         duration: CFTimeInterval,
         usingSpringWithDamping: Double,
@@ -116,7 +116,7 @@ class SpringAnimation {
 
 /****VECTORS*****/
 //    
-//    class func animateVectors(layer: GooeyLayer,
+//    class func animateVectors(layer: ImagePickerLayer,
 //        keypath: String,
 //        duration: CFTimeInterval,
 //        usingSpringWithDamping: Double,

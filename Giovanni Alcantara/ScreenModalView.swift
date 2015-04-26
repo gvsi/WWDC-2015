@@ -1,14 +1,14 @@
 //
-//  ImageModalView.swift
-//  PathDynamicModal-Demo
+//  ScreenModalView.swift
+//  Giovanni Alcantara
 //
-//  Created by Ryo Aoyama on 2/12/15.
-//  Copyright (c) 2015 Ryo Aoyama. All rights reserved.
+//  Created by Giovanni Alcantara on 21/04/2015.
+//  Copyright (c) 2015 Giovanni Alcantara. All rights reserved.
 //
 
 import UIKit
 
-class ImageModalView: UIView {
+class ScreenModalView: UIView {
     var bottomButtonHandler: (() -> Void)?
     var closeButtonHandler: (() -> Void)?
     var image: UIImage? {
@@ -38,8 +38,8 @@ class ImageModalView: UIView {
         self.closeButton.layer.shadowRadius = 2.0
     }
     
-    class func instantiateFromNib() -> ImageModalView {
-        let view = UINib(nibName: "ImageModalView", bundle: nil).instantiateWithOwner(nil, options: nil).first as! ImageModalView
+    class func instantiateFromNib() -> ScreenModalView {
+        let view = UINib(nibName: "ScreenModalView", bundle: nil).instantiateWithOwner(nil, options: nil).first as! ScreenModalView
         
         return view
     }

@@ -1,6 +1,6 @@
 //
-//  GuillotineMenuSegue.swift
-//  GuillotineMenu
+//  MainMenuSegue.swift
+//  MainMenu
 //
 //  Created by Maksym Lazebnyi on 3/24/15.
 //  Copyright (c) 2015 Yalantis. All rights reserved.
@@ -10,7 +10,7 @@ import UIKit
 
 private var key = 0
 
-class GuillotineMenuSegue: UIStoryboardSegue {
+class MainMenuSegue: UIStoryboardSegue {
     override init!(identifier: String!, source: UIViewController, destination: UIViewController) {
 
         if let animationDelegate = destination as? protocol<GuillotineAnimationDelegate> {
@@ -32,7 +32,7 @@ class GuillotineMenuSegue: UIStoryboardSegue {
     }
 }
 
-extension GuillotineMenuSegue: UIViewControllerTransitioningDelegate {
+extension MainMenuSegue: UIViewControllerTransitioningDelegate {
     func animationControllerForPresentedController(presented: UIViewController, presentingController _: UIViewController,
         sourceController _: UIViewController) -> UIViewControllerAnimatedTransitioning? {
             

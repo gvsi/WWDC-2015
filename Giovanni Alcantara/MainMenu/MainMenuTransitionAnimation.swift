@@ -1,6 +1,6 @@
 //
 //  GuillotineTransitionAnimation.swift
-//  GuillotineMenu
+//  MainMenu
 //
 //  Created by Maksym Lazebnyi on 3/24/15.
 //  Copyright (c) 2015 Yalantis. All rights reserved.

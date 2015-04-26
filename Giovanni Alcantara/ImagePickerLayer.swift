@@ -1,6 +1,5 @@
 //
-//  GooeyLayer.swift
-//  Gooey2
+//  ImagePickerLayer.swift
 //
 //  Created by Pål Forsberg on 2015-02-18.
 //  Copyright (c) 2015 Pål Forsberg. All rights reserved.
@@ -29,20 +28,20 @@ enum Direction {
 }
 enum Animation {
     case Calm
-    case Gooey
+    case ImagePicker
 }
 
 typealias Vectors = (CGVector, CGVector, CGVector, CGVector)
 typealias GooAnimation = (CAAnimation, Vectors)
 
-class GooeyLayer: CALayer{
+class ImagePickerLayer: CALayer{
 
     override init!(layer: AnyObject!) {
-        if(layer.isKindOfClass(GooeyLayer)){
-            self.nextVectors = (layer as! GooeyLayer).nextVectors
-            self.color = (layer as! GooeyLayer).color
-            self.currentVectors = (layer as! GooeyLayer).currentVectors
-            self.insets = (layer as! GooeyLayer).insets
+        if(layer.isKindOfClass(ImagePickerLayer)){
+            self.nextVectors = (layer as! ImagePickerLayer).nextVectors
+            self.color = (layer as! ImagePickerLayer).color
+            self.currentVectors = (layer as! ImagePickerLayer).currentVectors
+            self.insets = (layer as! ImagePickerLayer).insets
         } else{
             nextVectors = VectorsFunc.zero()
             self.color = UIColor.redColor().CGColor
@@ -200,7 +199,7 @@ class GooeyLayer: CALayer{
     func circleDistortPath(rect : CGRect, curve : CGFloat, d1 : CGVector, d2 : CGVector, d3 : CGVector, d4 : CGVector)->CGMutablePathRef{
         let nilvector = CGVector(dx:0, dy:0);
         
-        return GooeyLayer.circlePath(rect, curve: curve, vs: (
+        return ImagePickerLayer.circlePath(rect, curve: curve, vs: (
                 CGVector(dx:d1.dx, dy:d1.dy),
                 CGVector(dx:d2.dx, dy:d2.dy),
                 CGVector(dx:d3.dx, dy:d3.dy),

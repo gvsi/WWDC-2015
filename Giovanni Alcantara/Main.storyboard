@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Guillotine Menu View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="HUR-I3-PBq">
             <objects>
-                <viewController id="Za9-Fg-7CP" customClass="GuillotineMenuViewController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Za9-Fg-7CP" customClass="MainMenuViewController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cqc-je-Pkj"/>
                         <viewControllerLayoutGuide type="bottom" id="0cg-ci-yBZ"/>
@@ -390,7 +390,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Za9-Fg-7CP" kind="custom" customClass="GuillotineMenuSegue" customModule="Giovanni_Alcantara" customModuleProvider="target" id="p7g-kM-mzl"/>
+                                    <segue destination="Za9-Fg-7CP" kind="custom" customClass="MainMenuSegue" customModule="Giovanni_Alcantara" customModuleProvider="target" id="p7g-kM-mzl"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -603,7 +603,7 @@ Each weekend I tried using new technologies that I have never used previously an
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Za9-Fg-7CP" kind="custom" customClass="GuillotineMenuSegue" customModule="Giovanni_Alcantara" customModuleProvider="target" id="mKP-V0-SSu"/>
+                                    <segue destination="Za9-Fg-7CP" kind="custom" customClass="MainMenuSegue" customModule="Giovanni_Alcantara" customModuleProvider="target" id="mKP-V0-SSu"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -709,7 +709,7 @@ Each weekend I tried using new technologies that I have never used previously an
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Za9-Fg-7CP" kind="custom" customClass="GuillotineMenuSegue" customModule="Giovanni_Alcantara" customModuleProvider="target" id="aLz-Lc-FJB"/>
+                                    <segue destination="Za9-Fg-7CP" kind="custom" customClass="MainMenuSegue" customModule="Giovanni_Alcantara" customModuleProvider="target" id="aLz-Lc-FJB"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -826,12 +826,6 @@ Each weekend I tried using new technologies that I have never used previously an
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HkZ-A5-brI">
-                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                <connections>
-                                                    <action selector="buttonClicked:" destination="5AQ-of-k5U" eventType="touchUpInside" id="nPx-Gp-KM0"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.17254901960784313" green="0.50980392156862742" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -847,17 +841,15 @@ Each weekend I tried using new technologies that I have never used previously an
                                             <constraint firstAttribute="centerY" secondItem="dcY-VH-88N" secondAttribute="centerY" constant="63.5" id="7h2-CG-jxz">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                             </constraint>
-                                            <constraint firstAttribute="bottom" secondItem="uEJ-z9-MWb" secondAttribute="bottom" constant="78" id="DXS-E9-yBQ"/>
-                                            <constraint firstAttribute="width" secondItem="HkZ-A5-brI" secondAttribute="width" id="Ka6-Re-TUg"/>
+                                            <constraint firstAttribute="bottom" secondItem="uEJ-z9-MWb" secondAttribute="bottom" constant="78" id="DXS-E9-yBQ">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                            </constraint>
                                             <constraint firstItem="Pwg-8n-Ebe" firstAttribute="leading" secondItem="uEJ-z9-MWb" secondAttribute="leading" id="NSI-Lb-bO1"/>
                                             <constraint firstItem="dcY-VH-88N" firstAttribute="top" secondItem="HRm-Bc-E9W" secondAttribute="top" constant="71" id="Ori-ui-MwN">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                             </constraint>
-                                            <constraint firstAttribute="height" secondItem="HkZ-A5-brI" secondAttribute="height" id="P3q-oz-uK1"/>
-                                            <constraint firstAttribute="centerX" secondItem="HkZ-A5-brI" secondAttribute="centerX" id="Pc6-4H-YeB"/>
                                             <constraint firstAttribute="trailing" secondItem="dcY-VH-88N" secondAttribute="trailing" constant="154" id="PcH-Oo-5PM"/>
                                             <constraint firstAttribute="trailing" secondItem="dcY-VH-88N" secondAttribute="trailing" constant="154" id="StK-kg-a78"/>
-                                            <constraint firstAttribute="centerY" secondItem="HkZ-A5-brI" secondAttribute="centerY" id="VqT-Jr-1cb"/>
                                             <constraint firstItem="dcY-VH-88N" firstAttribute="leading" secondItem="HRm-Bc-E9W" secondAttribute="leading" constant="115" id="aOQ-u4-58u"/>
                                             <constraint firstItem="dcY-VH-88N" firstAttribute="leading" secondItem="HRm-Bc-E9W" secondAttribute="leading" constant="115" id="cWb-jO-HG2">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -870,28 +862,15 @@ Each weekend I tried using new technologies that I have never used previously an
                                             <constraint firstAttribute="bottom" secondItem="uEJ-z9-MWb" secondAttribute="bottom" constant="67" id="jgD-Wa-Ccq"/>
                                             <constraint firstItem="uEJ-z9-MWb" firstAttribute="trailing" secondItem="Pwg-8n-Ebe" secondAttribute="trailing" id="lr1-9h-7gD"/>
                                             <constraint firstAttribute="centerX" secondItem="dcY-VH-88N" secondAttribute="centerX" constant="21.5" id="rrI-gf-bB9">
-                                                <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                                             </constraint>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="subviews">
                                                 <exclude reference="Pwg-8n-Ebe"/>
                                                 <exclude reference="uEJ-z9-MWb"/>
-                                                <exclude reference="HkZ-A5-brI"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="5yq-8Z-Mbm"/>
-                                                <exclude reference="NSI-Lb-bO1"/>
-                                                <exclude reference="gf6-XP-63D"/>
-                                                <exclude reference="5Oz-a9-qTY"/>
-                                                <exclude reference="DXS-E9-yBQ"/>
-                                                <exclude reference="jb6-zc-m4Q"/>
-                                                <exclude reference="jgD-Wa-Ccq"/>
-                                                <exclude reference="lr1-9h-7gD"/>
-                                                <exclude reference="Ka6-Re-TUg"/>
-                                                <exclude reference="P3q-oz-uK1"/>
-                                                <exclude reference="Pc6-4H-YeB"/>
-                                                <exclude reference="VqT-Jr-1cb"/>
                                                 <exclude reference="3KL-Yd-5Bq"/>
                                                 <exclude reference="6Ec-gc-0bi"/>
                                                 <exclude reference="7h2-CG-jxz"/>
@@ -902,27 +881,22 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <exclude reference="cWb-jO-HG2"/>
                                                 <exclude reference="gHd-Qc-EBt"/>
                                                 <exclude reference="rrI-gf-bB9"/>
+                                                <exclude reference="5yq-8Z-Mbm"/>
+                                                <exclude reference="NSI-Lb-bO1"/>
+                                                <exclude reference="gf6-XP-63D"/>
+                                                <exclude reference="5Oz-a9-qTY"/>
+                                                <exclude reference="DXS-E9-yBQ"/>
+                                                <exclude reference="jb6-zc-m4Q"/>
+                                                <exclude reference="jgD-Wa-Ccq"/>
+                                                <exclude reference="lr1-9h-7gD"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="subviews">
                                                 <include reference="Pwg-8n-Ebe"/>
                                                 <include reference="uEJ-z9-MWb"/>
-                                                <include reference="HkZ-A5-brI"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="5yq-8Z-Mbm"/>
-                                                <include reference="NSI-Lb-bO1"/>
-                                                <include reference="gf6-XP-63D"/>
-                                                <include reference="5Oz-a9-qTY"/>
-                                                <include reference="DXS-E9-yBQ"/>
-                                                <include reference="jb6-zc-m4Q"/>
-                                                <exclude reference="jgD-Wa-Ccq"/>
-                                                <include reference="lr1-9h-7gD"/>
-                                                <include reference="Ka6-Re-TUg"/>
-                                                <include reference="P3q-oz-uK1"/>
-                                                <include reference="Pc6-4H-YeB"/>
-                                                <include reference="VqT-Jr-1cb"/>
                                                 <exclude reference="3KL-Yd-5Bq"/>
                                                 <exclude reference="6Ec-gc-0bi"/>
                                                 <exclude reference="7h2-CG-jxz"/>
@@ -933,6 +907,14 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <exclude reference="cWb-jO-HG2"/>
                                                 <exclude reference="gHd-Qc-EBt"/>
                                                 <include reference="rrI-gf-bB9"/>
+                                                <exclude reference="5yq-8Z-Mbm"/>
+                                                <include reference="NSI-Lb-bO1"/>
+                                                <include reference="gf6-XP-63D"/>
+                                                <include reference="5Oz-a9-qTY"/>
+                                                <include reference="DXS-E9-yBQ"/>
+                                                <include reference="jb6-zc-m4Q"/>
+                                                <exclude reference="jgD-Wa-Ccq"/>
+                                                <include reference="lr1-9h-7gD"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -998,7 +980,7 @@ Each weekend I tried using new technologies that I have never used previously an
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="135" id="XW1-kG-S1y"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="131" id="XkB-pM-vGo"/>
                                                     <constraint firstAttribute="height" constant="135" id="eDJ-kM-OOi">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="110"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="100"/>
                                                     </constraint>
                                                 </constraints>
                                                 <variation key="default">
@@ -1028,18 +1010,9 @@ Each weekend I tried using new technologies that I have never used previously an
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IoY-yF-eaU">
-                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                <connections>
-                                                    <action selector="buttonClicked:" destination="5AQ-of-k5U" eventType="touchUpInside" id="3QZ-eE-dDi"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.21568627450980393" green="0.77254901960784317" blue="0.32156862745098042" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="centerX" secondItem="IoY-yF-eaU" secondAttribute="centerX" id="272-CS-H5J"/>
-                                            <constraint firstAttribute="width" secondItem="IoY-yF-eaU" secondAttribute="width" id="5qm-e8-X2O"/>
-                                            <constraint firstAttribute="centerY" secondItem="IoY-yF-eaU" secondAttribute="centerY" id="7mx-m2-ecY"/>
                                             <constraint firstAttribute="centerX" secondItem="f5I-2v-fgh" secondAttribute="centerX" constant="-0.5" id="B7P-K0-eUX">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                             </constraint>
@@ -1047,30 +1020,22 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                                             </constraint>
                                             <constraint firstAttribute="trailing" secondItem="YZV-mV-7ju" secondAttribute="trailing" id="FFQ-7X-Fp6"/>
-                                            <constraint firstAttribute="height" secondItem="IoY-yF-eaU" secondAttribute="height" id="HV2-m1-vaL"/>
                                             <constraint firstAttribute="trailing" secondItem="W4y-dJ-NAW" secondAttribute="trailing" id="NVY-Os-22X"/>
                                             <constraint firstItem="f5I-2v-fgh" firstAttribute="width" secondItem="RVd-w0-tgH" secondAttribute="width" id="RaK-Ch-up4"/>
                                             <constraint firstItem="W4y-dJ-NAW" firstAttribute="width" secondItem="RVd-w0-tgH" secondAttribute="width" id="SzB-lM-6ZR"/>
                                             <constraint firstItem="W4y-dJ-NAW" firstAttribute="leading" secondItem="RVd-w0-tgH" secondAttribute="leading" id="Yxn-V0-hVl"/>
                                             <constraint firstItem="f5I-2v-fgh" firstAttribute="top" secondItem="RVd-w0-tgH" secondAttribute="top" constant="70" id="e7f-9Z-AuY">
-                                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                             </constraint>
                                             <constraint firstItem="YZV-mV-7ju" firstAttribute="leading" secondItem="RVd-w0-tgH" secondAttribute="leading" id="gkA-O5-fgo"/>
                                             <constraint firstItem="YZV-mV-7ju" firstAttribute="width" secondItem="RVd-w0-tgH" secondAttribute="width" id="iPa-9E-Bse"/>
                                             <constraint firstAttribute="bottom" secondItem="YZV-mV-7ju" secondAttribute="bottom" constant="54" id="wlF-c3-44V">
-                                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                             </constraint>
                                             <constraint firstItem="f5I-2v-fgh" firstAttribute="top" secondItem="RVd-w0-tgH" secondAttribute="top" constant="72" id="wqJ-ox-Ea7"/>
                                         </constraints>
                                         <variation key="default">
-                                            <mask key="subviews">
-                                                <exclude reference="IoY-yF-eaU"/>
-                                            </mask>
                                             <mask key="constraints">
-                                                <exclude reference="272-CS-H5J"/>
-                                                <exclude reference="5qm-e8-X2O"/>
-                                                <exclude reference="7mx-m2-ecY"/>
-                                                <exclude reference="HV2-m1-vaL"/>
                                                 <exclude reference="NVY-Os-22X"/>
                                                 <exclude reference="SzB-lM-6ZR"/>
                                                 <exclude reference="Yxn-V0-hVl"/>
@@ -1090,13 +1055,8 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <include reference="W4y-dJ-NAW"/>
                                                 <include reference="YZV-mV-7ju"/>
                                                 <include reference="f5I-2v-fgh"/>
-                                                <include reference="IoY-yF-eaU"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="272-CS-H5J"/>
-                                                <include reference="5qm-e8-X2O"/>
-                                                <include reference="7mx-m2-ecY"/>
-                                                <include reference="HV2-m1-vaL"/>
                                                 <include reference="NVY-Os-22X"/>
                                                 <include reference="SzB-lM-6ZR"/>
                                                 <include reference="Yxn-V0-hVl"/>
@@ -1204,25 +1164,15 @@ Each weekend I tried using new technologies that I have never used previously an
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="do7-r0-w0s">
-                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                <connections>
-                                                    <action selector="buttonClicked:" destination="5AQ-of-k5U" eventType="touchUpInside" id="Svr-MY-uzA"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.99607843137254903" green="0.77254901960784317" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="J1C-A3-2WY" secondAttribute="trailing" id="Azi-Av-Okc"/>
                                             <constraint firstItem="hhk-lL-8G5" firstAttribute="top" secondItem="Fpn-iP-Pyb" secondAttribute="top" constant="37" id="HQE-Yf-qss">
-                                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                                             </constraint>
                                             <constraint firstAttribute="width" secondItem="Fpn-iP-Pyb" secondAttribute="height" multiplier="1:1" id="Ma3-fx-XX9"/>
                                             <constraint firstAttribute="centerX" secondItem="hhk-lL-8G5" secondAttribute="centerX" id="MrI-MA-dm4"/>
-                                            <constraint firstAttribute="centerY" secondItem="do7-r0-w0s" secondAttribute="centerY" id="PcA-BV-flx"/>
-                                            <constraint firstAttribute="height" secondItem="do7-r0-w0s" secondAttribute="height" id="RoA-bS-zfQ"/>
-                                            <constraint firstAttribute="centerX" secondItem="do7-r0-w0s" secondAttribute="centerX" id="Vjm-tE-5Kk"/>
-                                            <constraint firstAttribute="width" secondItem="do7-r0-w0s" secondAttribute="width" id="Vkt-Y2-y57"/>
                                             <constraint firstItem="sff-ND-5bw" firstAttribute="leading" secondItem="Fpn-iP-Pyb" secondAttribute="leading" id="aWM-Vk-yYT"/>
                                             <constraint firstItem="J1C-A3-2WY" firstAttribute="width" secondItem="Fpn-iP-Pyb" secondAttribute="width" id="cmd-SH-oec"/>
                                             <constraint firstItem="sff-ND-5bw" firstAttribute="top" secondItem="J1C-A3-2WY" secondAttribute="bottom" constant="20" id="ifx-Ki-g7C">
@@ -1230,7 +1180,7 @@ Each weekend I tried using new technologies that I have never used previously an
                                             </constraint>
                                             <constraint firstAttribute="trailing" secondItem="sff-ND-5bw" secondAttribute="trailing" id="ohv-e9-Zvj"/>
                                             <constraint firstAttribute="bottom" secondItem="sff-ND-5bw" secondAttribute="bottom" constant="80" id="poV-YX-WCY">
-                                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                             </constraint>
                                             <constraint firstItem="J1C-A3-2WY" firstAttribute="leading" secondItem="Fpn-iP-Pyb" secondAttribute="leading" id="t3C-YS-r66"/>
                                             <constraint firstItem="sff-ND-5bw" firstAttribute="width" secondItem="Fpn-iP-Pyb" secondAttribute="width" id="z57-Pe-yI4"/>
@@ -1240,7 +1190,6 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <exclude reference="J1C-A3-2WY"/>
                                                 <exclude reference="sff-ND-5bw"/>
                                                 <exclude reference="hhk-lL-8G5"/>
-                                                <exclude reference="do7-r0-w0s"/>
                                             </mask>
                                             <mask key="constraints">
                                                 <exclude reference="Azi-Av-Okc"/>
@@ -1251,10 +1200,6 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <exclude reference="ohv-e9-Zvj"/>
                                                 <exclude reference="poV-YX-WCY"/>
                                                 <exclude reference="z57-Pe-yI4"/>
-                                                <exclude reference="PcA-BV-flx"/>
-                                                <exclude reference="RoA-bS-zfQ"/>
-                                                <exclude reference="Vjm-tE-5Kk"/>
-                                                <exclude reference="Vkt-Y2-y57"/>
                                                 <exclude reference="HQE-Yf-qss"/>
                                                 <exclude reference="MrI-MA-dm4"/>
                                             </mask>
@@ -1264,7 +1209,6 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <include reference="J1C-A3-2WY"/>
                                                 <include reference="sff-ND-5bw"/>
                                                 <include reference="hhk-lL-8G5"/>
-                                                <include reference="do7-r0-w0s"/>
                                             </mask>
                                             <mask key="constraints">
                                                 <include reference="Azi-Av-Okc"/>
@@ -1275,10 +1219,6 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <include reference="ohv-e9-Zvj"/>
                                                 <include reference="poV-YX-WCY"/>
                                                 <include reference="z57-Pe-yI4"/>
-                                                <include reference="PcA-BV-flx"/>
-                                                <include reference="RoA-bS-zfQ"/>
-                                                <include reference="Vjm-tE-5Kk"/>
-                                                <include reference="Vkt-Y2-y57"/>
                                                 <include reference="HQE-Yf-qss"/>
                                                 <include reference="MrI-MA-dm4"/>
                                             </mask>
@@ -1298,7 +1238,7 @@ Each weekend I tried using new technologies that I have never used previously an
                                     <constraint firstItem="RVd-w0-tgH" firstAttribute="leading" secondItem="Cg2-g8-gpZ" secondAttribute="leading" id="cQ3-0N-tHL"/>
                                     <constraint firstItem="HRm-Bc-E9W" firstAttribute="width" secondItem="RVd-w0-tgH" secondAttribute="width" id="dud-wB-13j"/>
                                     <constraint firstItem="dcY-VH-88N" firstAttribute="top" secondItem="Cg2-g8-gpZ" secondAttribute="top" constant="98" id="j27-eP-vPD">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                     </constraint>
                                     <constraint firstAttribute="trailing" secondItem="HRm-Bc-E9W" secondAttribute="trailing" id="jPB-D8-eGv"/>
                                     <constraint firstAttribute="bottom" secondItem="Fpn-iP-Pyb" secondAttribute="bottom" id="tyJ-XE-nEG"/>
@@ -1338,7 +1278,7 @@ Each weekend I tried using new technologies that I have never used previously an
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Za9-Fg-7CP" kind="custom" customClass="GuillotineMenuSegue" customModule="Giovanni_Alcantara" customModuleProvider="target" id="Vwf-40-xL6"/>
+                                    <segue destination="Za9-Fg-7CP" kind="custom" customClass="MainMenuSegue" customModule="Giovanni_Alcantara" customModuleProvider="target" id="Vwf-40-xL6"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1348,6 +1288,7 @@ Each weekend I tried using new technologies that I have never used previously an
                         <outlet property="beaconCartView" destination="HRm-Bc-E9W" id="qlI-sE-4i5"/>
                         <outlet property="goWalkersView" destination="RVd-w0-tgH" id="jwG-QD-RQW"/>
                         <outlet property="projectScrollView" destination="Cg2-g8-gpZ" id="YDR-Sd-lcm"/>
+                        <outlet property="verbaCoreView" destination="Fpn-iP-Pyb" id="ApT-pG-DfO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJm-xH-JL3" userLabel="First Responder" sceneMemberID="firstResponder"/>

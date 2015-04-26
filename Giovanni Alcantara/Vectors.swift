@@ -1,8 +1,8 @@
 //
 //  Vectors.swift
-//  Gooey2
+//  Giovanni Alcantara
 //
-//  Created by Pål Forsberg on 2015-02-20.
+//  Created by Pål Forsberg on 2015-02-18.
 //  Copyright (c) 2015 Pål Forsberg. All rights reserved.
 //
 

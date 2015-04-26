@@ -1,14 +1,14 @@
 //
-//  PathDynamicModal.swift
-//  PathDynamicModal-Demo
+//  ProjectScreenShowcaseModal.swift
+//  Giovanni Alcantara
 //
-//  Created by Ryo Aoyama on 2/9/15.
-//  Copyright (c) 2015 Ryo Aoyama. All rights reserved.
+//  Created by Giovanni Alcantara on 21/04/2015.
+//  Copyright (c) 2015 Giovanni Alcantara. All rights reserved.
 //
 
 import UIKit
 
-class PathDynamicModal: NSObject, UIGestureRecognizerDelegate {
+class ProjectScreenShowcaseModal: NSObject, UIGestureRecognizerDelegate {
     
     /* internal properties */
     
@@ -43,8 +43,8 @@ class PathDynamicModal: NSObject, UIGestureRecognizerDelegate {
     
     /* internal functions */
     
-    class func show(modalView view: UIView, inView: UIView) -> PathDynamicModal {
-        let modal = PathDynamicModal()
+    class func show(modalView view: UIView, inView: UIView) -> ProjectScreenShowcaseModal {
+        let modal = ProjectScreenShowcaseModal()
         modal.show(modalView: view, inView: inView)
         
         return modal
@@ -244,5 +244,5 @@ class PathDynamicModal: NSObject, UIGestureRecognizerDelegate {
 }
 
 private class ModalRetainView: UIView {
-    private var modal: PathDynamicModal?
+    private var modal: ProjectScreenShowcaseModal?
 }

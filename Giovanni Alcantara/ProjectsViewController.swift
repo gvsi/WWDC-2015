@@ -8,18 +8,18 @@
 
 import UIKit
 
-class ProjectsViewController: UIViewController, GooeyDelegate {
+class ProjectsViewController: UIViewController, ImagePickerDelegate {
 
     @IBOutlet weak var barButton: UIButton!
     @IBOutlet weak var projectScrollView: UIScrollView!
     @IBOutlet weak var beaconCartView: UIView!
     @IBOutlet weak var goWalkersView: UIView!
+    @IBOutlet weak var verbaCoreView: UIView!
     
-    var gooey = Gooey(frame: CGRect(x: 100, y: 100, width: 120, height: 120))
-    
+    var imagePicker1 : ImagePicker?
     
     @IBAction func buttonClicked(sender: UIButton) {
-        let view = ImageModalView.instantiateFromNib()
+        let view = ScreenModalView.instantiateFromNib()
         switch sender.tag {
         case 0:
             view.image = UIImage(named: "BeaconCart2")
@@ -32,7 +32,7 @@ class ProjectsViewController: UIViewController, GooeyDelegate {
         }
         
         let window = UIApplication.sharedApplication().delegate?.window!
-        let modal = PathDynamicModal.show(modalView: view, inView: window!)
+        let modal = ProjectScreenShowcaseModal.show(modalView: view, inView: window!)
         view.closeButtonHandler = {[weak modal] in
             modal?.closeWithLeansRandom()
             return
@@ -46,21 +46,25 @@ class ProjectsViewController: UIViewController, GooeyDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gooey.color = UIColor(red: 29/255.0, green: 163/255, blue: 1, alpha: 1.0)
-        gooey.delegate = self
-        self.beaconCartView.addSubview(gooey)
+        var imagePicker1 = ImagePicker(frame: CGRect(x: self.view.frame.width / 2 - 50, y: 130, width: 100, height: 100))
+        imagePicker1.color = UIColor(hex: "a8d4ff")
+        imagePicker1.projectIdentifier = "BeaconCart"
+        imagePicker1.delegate = self
         
+        var imagePicker2 = ImagePicker(frame: CGRect(x: self.view.frame.width / 2 - 50, y: 130, width: 100, height: 100))
+        imagePicker2.projectIdentifier = "GoWalkers"
+        imagePicker2.color = UIColor(hex: "005510")
+        imagePicker2.delegate = self
         
-//        let slider = UISlider(frame: CGRect(x: 20, y: 300, width: 280, height: 40))
-//        slider.addTarget(self, action: "update:", forControlEvents: UIControlEvents.ValueChanged)
-//        self.view.addSubview(slider)
+        var imagePicker3 = ImagePicker(frame: CGRect(x: self.view.frame.width / 2 - 50, y: 130, width: 100, height: 100))
+        imagePicker3.projectIdentifier = "VerbaCore"
+        imagePicker3.color = UIColor(hex: "e67e22")
+        imagePicker3.delegate = self
         
-//        let label = UILabel(frame: CGRect(x: 0, y: 350, width: 320, height: 40))
-//        label.textAlignment = NSTextAlignment.Center
-//        label.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)
-//        self.view.addSubview(label)
-//        
-//        durationLabel = label
+        self.beaconCartView.addSubview(imagePicker1)
+        self.goWalkersView.addSubview(imagePicker2)
+        self.verbaCoreView.addSubview(imagePicker3)
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -73,18 +77,33 @@ class ProjectsViewController: UIViewController, GooeyDelegate {
     }
 
     // Picker
-    func update(s : UISlider){
-        let duration = 0.13 + Double(s.value)
-        
-        let string = NSMutableAttributedString(string: String(format: "Duration: %0.2f", duration))
-        string.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue-Bold", size: 18.0)!, range: NSMakeRange(0, 9))
-//        self.durationLabel.attributedText = string
-        self.gooey.duration = duration
-    }
     
-    func gooeyDidSelectIndex(index: Int) {
-        println("Gooey did select index \(index)")
+    func imagePickerDidSelectIndex(index: Int, imagePicker: ImagePicker) {
+        let view = ScreenModalView.instantiateFromNib()
+        
+        switch imagePicker.projectIdentifier! {
+        case "BeaconCart":
+            view.image = UIImage(named: "BeaconCart\(index)")
+        case "GoWalkers":
+            view.image = UIImage(named: "GoWalkers\(index)")
+        case "VerbaCore":
+            view.image = UIImage(named: "VerbaCore\(index)")
+        default:
+            break
+        }
+        
+        let window = UIApplication.sharedApplication().delegate?.window!
+        let modal = ProjectScreenShowcaseModal.show(modalView: view, inView: window!)
+        view.closeButtonHandler = {[weak modal] in
+            modal?.closeWithLeansRandom()
+            return
+        }
+        view.bottomButtonHandler = {[weak modal] in
+            modal?.closeWithLeansRandom()
+            return
+        }
     }
+
     
     
     /*
@@ -93,7 +112,7 @@ class ProjectsViewController: UIViewController, GooeyDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Your Menu View Controller vew must know the following data for the proper animation
-        let destinationVC = segue.destinationViewController as! GuillotineMenuViewController
+        let destinationVC = segue.destinationViewController as! MainMenuViewController
         destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
         destinationVC.hostTitleText = self.navigationItem.title
         destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor

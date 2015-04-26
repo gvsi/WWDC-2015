@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HackathonViewController : UIViewController, PathMenuDelegate {
+class HackathonViewController : UIViewController, HackathonPickerDelegate {
     @IBOutlet weak var barButton: UIButton!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var hackathonIntroView: UIView!
@@ -29,23 +29,23 @@ class HackathonViewController : UIViewController, PathMenuDelegate {
         
         let starImage: UIImage = UIImage(named: "icon-code")!
         
-        let hackItem1: PathMenuItem = PathMenuItem(image: storyMenuItemImage, highlightedImage: storyMenuItemImagePressed, ContentImage: starImage, highlightedContentImage:nil)
+        let hackItem1: HackathonPickerItem = HackathonPickerItem(image: storyMenuItemImage, highlightedImage: storyMenuItemImagePressed, ContentImage: starImage, highlightedContentImage:nil)
         
-        let hackItem2: PathMenuItem = PathMenuItem(image: storyMenuItemImage, highlightedImage: storyMenuItemImagePressed, ContentImage: starImage, highlightedContentImage:nil)
+        let hackItem2: HackathonPickerItem = HackathonPickerItem(image: storyMenuItemImage, highlightedImage: storyMenuItemImagePressed, ContentImage: starImage, highlightedContentImage:nil)
         
-        let hackItem3: PathMenuItem = PathMenuItem(image: storyMenuItemImage, highlightedImage: storyMenuItemImagePressed, ContentImage: starImage, highlightedContentImage:nil)
+        let hackItem3: HackathonPickerItem = HackathonPickerItem(image: storyMenuItemImage, highlightedImage: storyMenuItemImagePressed, ContentImage: starImage, highlightedContentImage:nil)
         
-        let hackItem4: PathMenuItem = PathMenuItem(image: storyMenuItemImage, highlightedImage: storyMenuItemImagePressed, ContentImage: starImage, highlightedContentImage:nil)
+        let hackItem4: HackathonPickerItem = HackathonPickerItem(image: storyMenuItemImage, highlightedImage: storyMenuItemImagePressed, ContentImage: starImage, highlightedContentImage:nil)
         
-        let hackItem5: PathMenuItem = PathMenuItem(image: storyMenuItemImage, highlightedImage: storyMenuItemImagePressed, ContentImage: starImage, highlightedContentImage:nil)
+        let hackItem5: HackathonPickerItem = HackathonPickerItem(image: storyMenuItemImage, highlightedImage: storyMenuItemImagePressed, ContentImage: starImage, highlightedContentImage:nil)
         
-        let hackItem6: PathMenuItem = PathMenuItem(image: storyMenuItemImage, highlightedImage: storyMenuItemImagePressed, ContentImage: starImage, highlightedContentImage:nil)
+        let hackItem6: HackathonPickerItem = HackathonPickerItem(image: storyMenuItemImage, highlightedImage: storyMenuItemImagePressed, ContentImage: starImage, highlightedContentImage:nil)
         
-        var menus: [PathMenuItem] = [hackItem1, hackItem2, hackItem3, hackItem4, hackItem5, hackItem6]
+        var menus: [HackathonPickerItem] = [hackItem1, hackItem2, hackItem3, hackItem4, hackItem5, hackItem6]
         
-        let startItem: PathMenuItem = PathMenuItem(image: UIImage(named: "bg-addbutton_x"), highlightedImage: UIImage(named: "bg-addbutton-highlighted"), ContentImage: UIImage(named: "icon-navigate"), highlightedContentImage: UIImage(named: "icon-navigate-highlighted"))
+        let startItem: HackathonPickerItem = HackathonPickerItem(image: UIImage(named: "bg-addbutton_x"), highlightedImage: UIImage(named: "bg-addbutton-highlighted"), ContentImage: UIImage(named: "icon-navigate"), highlightedContentImage: UIImage(named: "icon-navigate-highlighted"))
         
-        var menu: PathMenu = PathMenu(frame: self.view.bounds, startItem: startItem, optionMenus: menus)
+        var menu: HackathonPicker = HackathonPicker(frame: self.view.bounds, startItem: startItem, optionMenus: menus)
         menu.delegate = self
         menu.startPoint = CGPointMake(UIScreen.mainScreen().bounds.width/2, self.view.frame.size.height - 30.0)
         menu.menuWholeAngle = CGFloat(M_PI) - CGFloat(M_PI/5)
@@ -64,9 +64,9 @@ class HackathonViewController : UIViewController, PathMenuDelegate {
     }
     
     
-    // PathMenuDelegate
+    // HackathonPickerDelegate
     
-    func pathMenu(menu: PathMenu, didSelectIndex idx: Int) {
+    func hackathonPicker(menu: HackathonPicker, didSelectIndex idx: Int) {
         //println("Selected index: \(idx)")
         self.backgroundView?.backgroundColor = UIColor(hex: "#34495e")
         self.hackathonIntroView.removeFromSuperview()
@@ -115,7 +115,7 @@ class HackathonViewController : UIViewController, PathMenuDelegate {
         
     }
     
-    func pathMenuWillAnimateOpen(menu: PathMenu) {
+    func hackathonPickerWillAnimateOpen(menu: HackathonPicker) {
         //println("Menu will open!")
         self.backgroundView?.backgroundColor = UIColor(red:0.0, green:0.0, blue:0.0, alpha:0.7)
         if let orIm = self.originalImage {
@@ -123,18 +123,18 @@ class HackathonViewController : UIViewController, PathMenuDelegate {
         }
     }
     
-    func pathMenuWillAnimateClose(menu: PathMenu) {
+    func hackathonPickerWillAnimateClose(menu: HackathonPicker) {
         //println("Menu will close!")
         if let orIm = self.originalImage {
             self.hackImageView.image = orIm
         }
     }
     
-    func pathMenuDidFinishAnimationOpen(menu: PathMenu) {
+    func hackathonPickerDidFinishAnimationOpen(menu: HackathonPicker) {
         //println("Menu was open!")
     }
     
-    func pathMenuDidFinishAnimationClose(menu: PathMenu) {
+    func hackathonPickerDidFinishAnimationClose(menu: HackathonPicker) {
         //println("Menu was closed!")
         self.backgroundView?.backgroundColor = UIColor(hex: "#34495e")
     }
@@ -154,7 +154,7 @@ class HackathonViewController : UIViewController, PathMenuDelegate {
     // segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Your Menu View Controller vew must know the following data for the proper animation
-        let destinationVC = segue.destinationViewController as! GuillotineMenuViewController
+        let destinationVC = segue.destinationViewController as! MainMenuViewController
         destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
         destinationVC.hostTitleText = self.navigationItem.title
         destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor

@@ -1,21 +1,21 @@
 //
-//  GooeyItem.swift
-//  Gooey2
+//  ImagePickerItem.swift
+//  Giovanni Alcantara
 //
-//  Created by Pål Forsberg on 2015-03-02.
-//  Copyright (c) 2015 Pål Forsberg. All rights reserved.
+//  Created by Giovanni Alcantara on 2015-04-25.
+//  Copyright (c) 2015 Giovanni Alcantara. All rights reserved.
 //
 
 import UIKit
 
-protocol GooeyItemDelegate {
-    func gooeyItemDidSelect(item : GooeyItem)
+protocol ImagePickerItemDelegate {
+    func imagePickerItemDidSelect(item : ImagePickerItem)
 }
-class GooeyItem : UIView{
+class ImagePickerItem : UIView{
     let bridge : BridgeLayer = BridgeLayer()
     let imageView : UIImageView = UIImageView(frame: CGRect(x: 5, y: 0, width: 40, height: 40))
     var state : State = State.Closed
-    var delegate : GooeyItemDelegate?
+    var delegate : ImagePickerItemDelegate?
     
     var color : UIColor? {
         didSet {
@@ -54,7 +54,7 @@ class GooeyItem : UIView{
     func tapped(tapper : UITapGestureRecognizer){
         let loc = tapper.locationInView(self)
         if(loc.y < 44 && self.state == State.Open){
-            self.delegate?.gooeyItemDidSelect(self)
+            self.delegate?.imagePickerItemDidSelect(self)
         }
     }
     
