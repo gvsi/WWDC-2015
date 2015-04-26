@@ -1,6 +1,6 @@
 //
-//  GuillotineViewController.swift
-//  MainMenu
+//  MainMenuViewController.swift
+//  Giovanni Alcantara
 //
 //  Created by Maksym Lazebnyi on 3/24/15.
 //  Copyright (c) 2015 Yalantis. All rights reserved.
@@ -93,7 +93,7 @@ class MainMenuViewController: UIViewController {
 
 }
 
-extension MainMenuViewController: GuillotineAnimationProtocol {
+extension MainMenuViewController: MainMenuAnimationProtocol {
 
     func anchorPoint() -> CGPoint {
         if UIDevice.currentDevice().orientation == .LandscapeLeft || UIDevice.currentDevice().orientation == .LandscapeRight {

@@ -116,7 +116,6 @@ class HackathonViewController : UIViewController, HackathonPickerDelegate {
     }
     
     func hackathonPickerWillAnimateOpen(menu: HackathonPicker) {
-        //println("Menu will open!")
         self.backgroundView?.backgroundColor = UIColor(red:0.0, green:0.0, blue:0.0, alpha:0.7)
         if let orIm = self.originalImage {
             self.hackImageView.image = imageBlackAndWhite(orIm)
@@ -124,18 +123,16 @@ class HackathonViewController : UIViewController, HackathonPickerDelegate {
     }
     
     func hackathonPickerWillAnimateClose(menu: HackathonPicker) {
-        //println("Menu will close!")
         if let orIm = self.originalImage {
             self.hackImageView.image = orIm
         }
     }
     
     func hackathonPickerDidFinishAnimationOpen(menu: HackathonPicker) {
-        //println("Menu was open!")
+        //println("Menu opened!")
     }
     
     func hackathonPickerDidFinishAnimationClose(menu: HackathonPicker) {
-        //println("Menu was closed!")
         self.backgroundView?.backgroundColor = UIColor(hex: "#34495e")
     }
 
@@ -151,9 +148,8 @@ class HackathonViewController : UIViewController, HackathonPickerDelegate {
         return newImage!
     }
     
-    // segue
+    // Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Your Menu View Controller vew must know the following data for the proper animation
         let destinationVC = segue.destinationViewController as! MainMenuViewController
         destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
         destinationVC.hostTitleText = self.navigationItem.title

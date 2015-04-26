@@ -52,28 +52,20 @@ class AboutCollectionViewController: UICollectionViewController, UICollectionVie
             cellBeingOpened = collectionView?.cellForItemAtIndexPath(indexPathOfCellBeingOpened!)
             positionOfcellBeingOpened = (indexPathOfCellBeingOpened!.row % 2 == 0) ? "left" : "right"
             panStartXPoint = location.x
-            panEndXPoint = centerXPoint + (centerXPoint - location.x) // So that the transition completes at a symmetrical distance around the center
+            panEndXPoint = centerXPoint + (centerXPoint - location.x)
             
-            // Now we capture an image of the cell we are opening, 
-            // hide the cell view itself and use the image to make the transition
             imageOfCellBeingOpened = UIImageView(image: ImageFactory.captureView(cellBeingOpened!.contentView))
             imageOfCellBeingOpened?.frame = cellBeingOpened!.frame
             imageOfCellBeingOpened?.frame.origin.y -= collectionView!.contentOffset.y
-            
-            // Based on the position of the cell we move the anchor point, the rotation will be around the Y axis line
-            // located at the anchor point we specify.
-            //
-            // For cells at the left side the anchor point should be at the right side of the image,
-            // and for cells at the right side the anchor point should be at the left side
             imageOfCellBeingOpened?.layer.anchorPoint = (positionOfcellBeingOpened == "left") ? CGPointMake(1.0, 0.5) : CGPointMake(0.0, 0.5)
             
-            // Now we hide the cell view and user its captured image instead
+            // Hiding cell view
             cellBeingOpened?.alpha = 0
             view.addSubview(imageOfCellBeingOpened!)
             
             detailViewOfCellBeingOpened = AboutMeDetail.detailViewForCell(cellBeingOpened!, atViewController: self)
             
-            // We take a snapshot of the detail view and split it into two parts
+            // Snapshot
             let imagesOfDetailViewParts = ImageFactory.split(
                 ImageFactory.captureView(detailViewOfCellBeingOpened!)
             )
@@ -81,7 +73,6 @@ class AboutCollectionViewController: UICollectionViewController, UICollectionVie
             let leftPartView = UIImageView(image: imagesOfDetailViewParts.left)
             let rightPartView = UIImageView(image: imagesOfDetailViewParts.right)
             
-            // Positioning the parts based on the position of the cell in the scroll view
             leftPartView.frame = cellBeingOpened!.frame
             leftPartView.frame.origin.y -= collectionView!.contentOffset.y
             
@@ -91,14 +82,9 @@ class AboutCollectionViewController: UICollectionViewController, UICollectionVie
             rightPartView.frame.origin.x = cellBeingOpened!.frame.width
             
             if positionOfcellBeingOpened == "left"{
-                // The firstImageOfDetailView is the first image that will appear once the animation
-                // starts, it's a static image that appears below the imageOfCellBeingOpened once it moves up
                 firstImageOfDetailView = leftPartView
                 view.addSubview(firstImageOfDetailView!)
                 
-                // The lastImageOfDetailView is the image that moves once the animation reaches 50%.
-                // At this point imageOfCellBeingOpened will be perpendicular to the screen (hidden), only then
-                // lastImageOfDetailView will appear and complete the movement to give the effect of a book flip.
                 lastImageOfDetailView = rightPartView
                 lastImageOfDetailView?.layer.anchorPoint = CGPointMake(0.0, 0.5) // Anchor point to the left side of the image
                 view.addSubview(lastImageOfDetailView!)
@@ -114,23 +100,18 @@ class AboutCollectionViewController: UICollectionViewController, UICollectionVie
             }
         }
         
-        // Calculating the distance the the finger needs to move to complete the transition
+        // Simmetric completion point
         distanceDistanceOfCompleteTransition = abs(panEndXPoint! - panStartXPoint!)
         distanceDistanceOfCompleteTransition = distanceDistanceOfCompleteTransition < 100 ? 100 : distanceDistanceOfCompleteTransition
         percentageToCompletelyOpen = ((location.x - panStartXPoint!) / distanceDistanceOfCompleteTransition) * 100
         
-        // Direction of movement to determine if the user is opening or closing
         direction = (velocity.x > 0) ? "right" : "left"
         
-        // In case the cell is at the right, (location.x - panStartXPoint) will be a negative value causing the percentage
-        // to be negative and we don't want that.
         if positionOfcellBeingOpened == "right"{
             percentageToCompletelyOpen = CGFloat(percentageToCompletelyOpen * -1)
         }
         
         if percentageToCompletelyOpen > 0 && percentageToCompletelyOpen <= 50 {
-            // If the percentage is below 50% we need to hide the image of the second half of the
-            // detail view until we need it, and also show the image of cell
             lastImageOfDetailView?.alpha = 0
             imageOfCellBeingOpened?.alpha = 1
             
@@ -142,7 +123,6 @@ class AboutCollectionViewController: UICollectionViewController, UICollectionVie
             )
             
         } else if percentageToCompletelyOpen > 50 && percentageToCompletelyOpen <= 100 {
-            // Here we hide the image of the cell and show the second half of the detail view image
             lastImageOfDetailView?.alpha = 1
             imageOfCellBeingOpened?.alpha = 0
             
@@ -156,6 +136,7 @@ class AboutCollectionViewController: UICollectionViewController, UICollectionVie
         
         
         if(panRecognizer.state == UIGestureRecognizerState.Ended){
+            // animate half
             if percentageToCompletelyOpen <= 50 {
                 
                 UIView.animateWithDuration(0.4, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn | UIViewAnimationOptions.CurveEaseOut, animations: {
@@ -180,6 +161,7 @@ class AboutCollectionViewController: UICollectionViewController, UICollectionVie
    
                 
             }else{
+                // animate all
                 UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn | UIViewAnimationOptions.CurveEaseOut, animations: {
                     
                     self.lastImageOfDetailView?.layer.transform = self.cellTransformToPercent(
@@ -224,33 +206,15 @@ class AboutCollectionViewController: UICollectionViewController, UICollectionVie
         var percentForAngle: CGFloat
         
         identity.m34 = -1.0/2000
-        
-        // For the second half of the animation, the value of the angle should be decreasing.
-        // At the first half the page is said to be opening, at the seonc half the page is said
-        // to be closing, so the percentage should start at zero and end at zero.
         percentForAngle = secondHalf ? (1 - percent) : percent
         
-        // We multiply by 2 to make the rotation of the cell to complete at 50% of the distance.
-        // The other 50% we will be animating the colored background.
         angle = percentForAngle * 2 * CGFloat(M_PI_2)
-        
-        // Remember we have moved the anchor point to the end of the view causing the layer to move?
-        // Now we have to translate the layer half the width of its original size so that it's placed right
         var translation = cellBeingOpened!.frame.width * 0.5
         
-        // For the right side, the page flips by rotating anti-clockwise thus the angle need to be negative.
-        //
-        // Also when the anchor changes to be on the left side of the view, the translation need to happen
-        // in the opposite direction.
         if cellPosition == "right"{
             angle *= -1
             translation *= -1
         }
-        
-        // For the second half the anchor point of the view changes thus the angle sign should be changed
-        //
-        // Also at the second half of the animation of a cell to the left, the view has its anchor point
-        // to the left, so the translation need to happen in the opposite direction.
         if secondHalf{
             angle *= -1
             translation *= (cellPosition == "left") ? -1 : 1
@@ -272,9 +236,7 @@ class AboutCollectionViewController: UICollectionViewController, UICollectionVie
 
 extension AboutCollectionViewController{
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
+    // CollectionView Delegate
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
@@ -316,15 +278,17 @@ extension AboutCollectionViewController{
         return 0.0
     }
     
-    //segue
+    // Sege
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Your Menu View Controller vew must know the following data for the proper animation
         let destinationVC = segue.destinationViewController as! MainMenuViewController
         destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
         destinationVC.hostTitleText = self.navigationItem.title
         destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor
         destinationVC.setMenuButtonWithImage(barButton.imageView!.image!)
     }
-
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
     
 }

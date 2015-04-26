@@ -21,7 +21,7 @@ public class PagesNavigationController : UINavigationController {
         
         center.addObserverForName("MenuButtonPressed", object: appDelegate, queue: queue) {notification in
             if let button = notification?.userInfo?["Button"] as? UIButton {
-                println("button is: \(button.titleLabel?.text)")
+                //println("button is: \(button.titleLabel?.text)")
                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
                 
                 if button.tag == 3 {

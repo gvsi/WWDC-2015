@@ -1,6 +1,6 @@
 //
 //  MainMenuSegue.swift
-//  MainMenu
+//  Giovanni Alcantara
 //
 //  Created by Maksym Lazebnyi on 3/24/15.
 //  Copyright (c) 2015 Yalantis. All rights reserved.
@@ -13,10 +13,10 @@ private var key = 0
 class MainMenuSegue: UIStoryboardSegue {
     override init!(identifier: String!, source: UIViewController, destination: UIViewController) {
 
-        if let animationDelegate = destination as? protocol<GuillotineAnimationDelegate> {
+        if let animationDelegate = destination as? protocol<MainMenuAnimationDelegate> {
             // do nothing
         }else{
-            assert(true, "Destination must conform to \(NSStringFromProtocol(GuillotineAnimationProtocol)) protocol")
+            assert(true, "Destination must conform to \(NSStringFromProtocol(MainMenuAnimationProtocol)) protocol")
         }
         super.init(identifier: identifier, source: source, destination: destination)
     }
@@ -37,10 +37,10 @@ extension MainMenuSegue: UIViewControllerTransitioningDelegate {
         sourceController _: UIViewController) -> UIViewControllerAnimatedTransitioning? {
             
             objc_setAssociatedObject(presented, &key, self, UInt(OBJC_ASSOCIATION_RETAIN_NONATOMIC))
-            return GuillotineTransitionAnimation(.Presentation)
+            return MainMenuTransitionAnimation(.Presentation)
     }
     
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return GuillotineTransitionAnimation(.Dismissal)
+        return MainMenuTransitionAnimation(.Dismissal)
     }
 }

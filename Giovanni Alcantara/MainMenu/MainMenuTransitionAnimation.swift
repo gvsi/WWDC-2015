@@ -1,6 +1,6 @@
 //
-//  GuillotineTransitionAnimation.swift
-//  MainMenu
+//  MainMenuTransitionAnimation.swift
+//  Giovanni Alcantara
 //
 //  Created by Maksym Lazebnyi on 3/24/15.
 //  Copyright (c) 2015 Yalantis. All rights reserved.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-@objc protocol GuillotineAnimationProtocol: NSObjectProtocol {
+@objc protocol MainMenuAnimationProtocol: NSObjectProtocol {
     func navigationBarHeight() -> CGFloat
     func anchorPoint() -> CGPoint
     func hostTitle () -> NSString
 }
 
-@objc protocol GuillotineAnimationDelegate: NSObjectProtocol {
-    // Your menu view controller will be notified about the animation progress if conforms GuillotineAnimationDelegate protocol
+@objc protocol MainMenuAnimationDelegate: NSObjectProtocol {
+    // Your menu view controller will be notified about the animation progress if conforms MainMenuAnimationDelegate protocol
     optional func menuDidCollideWithBoundary()
     optional func menuDidFinishPresentation()
     optional func menuDidFinishDismissal()
@@ -24,7 +24,7 @@ import UIKit
     optional func willStartDismissal()
 }
 
-class GuillotineTransitionAnimation: NSObject {
+class MainMenuTransitionAnimation: NSObject {
     enum Mode { case Presentation, Dismissal }
     
     private let mode: Mode
@@ -54,7 +54,7 @@ class GuillotineTransitionAnimation: NSObject {
     
     private func animatePresentation(context: UIViewControllerContextTransitioning) {
         menu = context.viewControllerForKey(UITransitionContextToViewControllerKey)!
-        if let animationDelegate = menu as? protocol<GuillotineAnimationDelegate> {
+        if let animationDelegate = menu as? protocol<MainMenuAnimationDelegate> {
             animationDelegate.willStartPresentation?()
         }
         // Move view off screen to avoid blink at start
@@ -67,7 +67,7 @@ class GuillotineTransitionAnimation: NSObject {
     private func animateDismissal(context: UIViewControllerContextTransitioning) {
         menu = context.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         
-        if let animationDelegate = menu as? protocol<GuillotineAnimationDelegate> {
+        if let animationDelegate = menu as? protocol<MainMenuAnimationDelegate> {
             animationDelegate.willStartDismissal?()
         }
         
@@ -81,7 +81,7 @@ class GuillotineTransitionAnimation: NSObject {
         animator = UIDynamicAnimator(referenceView: context.containerView())
         animator.delegate = self
         statusbarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
-        if let menuProt = menu as? protocol<GuillotineAnimationProtocol> {
+        if let menuProt = menu as? protocol<MainMenuAnimationProtocol> {
             navigationBarHeight = menuProt.navigationBarHeight()
             anchorPoint = menuProt.anchorPoint()
         }
@@ -135,7 +135,7 @@ class GuillotineTransitionAnimation: NSObject {
         menu.view.addSubview(hostTitleLabel)
         hostTitleLabel.numberOfLines = 1;
         
-        if let menuProt = menu as? protocol<GuillotineAnimationProtocol> {
+        if let menuProt = menu as? protocol<MainMenuAnimationProtocol> {
             hostTitleLabel.text = menuProt.hostTitle() as String
         }
         
@@ -161,7 +161,7 @@ class GuillotineTransitionAnimation: NSObject {
     }
 }
 
-extension GuillotineTransitionAnimation: UIViewControllerAnimatedTransitioning {
+extension MainMenuTransitionAnimation: UIViewControllerAnimatedTransitioning {
     func animateTransition(context: UIViewControllerContextTransitioning) {
         switch mode {
         case .Presentation:
@@ -176,16 +176,16 @@ extension GuillotineTransitionAnimation: UIViewControllerAnimatedTransitioning {
     }
 }
 
-extension GuillotineTransitionAnimation: UICollisionBehaviorDelegate {
+extension MainMenuTransitionAnimation: UICollisionBehaviorDelegate {
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying, atPoint p: CGPoint) {
         //println("collided")
-        if let animationDelegate = menu as? protocol<GuillotineAnimationDelegate> {
+        if let animationDelegate = menu as? protocol<MainMenuAnimationDelegate> {
                 animationDelegate.menuDidCollideWithBoundary?()
         }
     }
 }
 
-extension GuillotineTransitionAnimation: UIDynamicAnimatorDelegate {
+extension MainMenuTransitionAnimation: UIDynamicAnimatorDelegate {
     func dynamicAnimatorDidPause(animator: UIDynamicAnimator) {
         if self.mode == .Presentation {
             self.animator.removeAllBehaviors()
@@ -196,12 +196,12 @@ extension GuillotineTransitionAnimation: UIDynamicAnimatorDelegate {
             menu.endAppearanceTransition()
             //println("finished")
             
-            if let animationDelegate = menu as? protocol<GuillotineAnimationDelegate> {
+            if let animationDelegate = menu as? protocol<MainMenuAnimationDelegate> {
                 animationDelegate.menuDidFinishPresentation?()
             }
         } else {
             menu.view.removeFromSuperview()
-            if let animationDelegate = menu as? protocol<GuillotineAnimationDelegate> {
+            if let animationDelegate = menu as? protocol<MainMenuAnimationDelegate> {
                 animationDelegate.menuDidFinishDismissal?()
             }
         }

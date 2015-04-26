@@ -153,8 +153,8 @@
 		3F9912ED1ADE5E2700470C65 /* Giovanni Alcantara */ = {
 			isa = PBXGroup;
 			children = (
-				3F751FAD1AE51DDB00AD44D9 /* HackathonPicker */,
 				3FCED8131AEC680C0061267A /* ProjectScreenShowcase */,
+				3F751FAD1AE51DDB00AD44D9 /* HackathonPicker */,
 				3FC762C51AE5A27600EAA47D /* AboutMe */,
 				3F9CAEB41AEC431100FCB73E /* ProjectImagePicker */,
 				3FF0F5E21AE2987A0041A848 /* MainMenu */,

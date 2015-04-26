@@ -1,6 +1,6 @@
 //
 //  FillWithView.swift
-//  Memo
+//  Giovanni Alcantara
 //
 //  Created by Maksym Lazebnyi on 1/30/15.
 //  Copyright (c) 2015 Yalantis. All rights reserved.

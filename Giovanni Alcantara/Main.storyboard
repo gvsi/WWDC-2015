@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ef5-ab-UM6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ef5-ab-UM6">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -161,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSw-Pr-zEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2079" y="255.75"/>
+            <point key="canvasLocation" x="2595" y="267.75"/>
         </scene>
         <!--Hello-->
         <scene sceneID="0YW-bB-r1S">
@@ -425,7 +425,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MoU-bm-Wxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-68" y="599"/>
+            <point key="canvasLocation" x="147" y="1204.5"/>
         </scene>
         <!--Hackathons-->
         <scene sceneID="ieD-N7-467">
@@ -728,7 +728,7 @@ Each weekend I tried using new technologies that I have never used previously an
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2582" y="1162"/>
+            <point key="canvasLocation" x="2578.5" y="1178.25"/>
         </scene>
         <!--Projects-->
         <scene sceneID="bTj-8R-MPv">
@@ -871,6 +871,14 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <exclude reference="uEJ-z9-MWb"/>
                                             </mask>
                                             <mask key="constraints">
+                                                <exclude reference="5yq-8Z-Mbm"/>
+                                                <exclude reference="NSI-Lb-bO1"/>
+                                                <exclude reference="gf6-XP-63D"/>
+                                                <exclude reference="5Oz-a9-qTY"/>
+                                                <exclude reference="DXS-E9-yBQ"/>
+                                                <exclude reference="jb6-zc-m4Q"/>
+                                                <exclude reference="jgD-Wa-Ccq"/>
+                                                <exclude reference="lr1-9h-7gD"/>
                                                 <exclude reference="3KL-Yd-5Bq"/>
                                                 <exclude reference="6Ec-gc-0bi"/>
                                                 <exclude reference="7h2-CG-jxz"/>
@@ -881,14 +889,6 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <exclude reference="cWb-jO-HG2"/>
                                                 <exclude reference="gHd-Qc-EBt"/>
                                                 <exclude reference="rrI-gf-bB9"/>
-                                                <exclude reference="5yq-8Z-Mbm"/>
-                                                <exclude reference="NSI-Lb-bO1"/>
-                                                <exclude reference="gf6-XP-63D"/>
-                                                <exclude reference="5Oz-a9-qTY"/>
-                                                <exclude reference="DXS-E9-yBQ"/>
-                                                <exclude reference="jb6-zc-m4Q"/>
-                                                <exclude reference="jgD-Wa-Ccq"/>
-                                                <exclude reference="lr1-9h-7gD"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -897,6 +897,14 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <include reference="uEJ-z9-MWb"/>
                                             </mask>
                                             <mask key="constraints">
+                                                <exclude reference="5yq-8Z-Mbm"/>
+                                                <include reference="NSI-Lb-bO1"/>
+                                                <include reference="gf6-XP-63D"/>
+                                                <include reference="5Oz-a9-qTY"/>
+                                                <include reference="DXS-E9-yBQ"/>
+                                                <include reference="jb6-zc-m4Q"/>
+                                                <exclude reference="jgD-Wa-Ccq"/>
+                                                <include reference="lr1-9h-7gD"/>
                                                 <exclude reference="3KL-Yd-5Bq"/>
                                                 <exclude reference="6Ec-gc-0bi"/>
                                                 <exclude reference="7h2-CG-jxz"/>
@@ -907,14 +915,6 @@ Each weekend I tried using new technologies that I have never used previously an
                                                 <exclude reference="cWb-jO-HG2"/>
                                                 <exclude reference="gHd-Qc-EBt"/>
                                                 <include reference="rrI-gf-bB9"/>
-                                                <exclude reference="5yq-8Z-Mbm"/>
-                                                <include reference="NSI-Lb-bO1"/>
-                                                <include reference="gf6-XP-63D"/>
-                                                <include reference="5Oz-a9-qTY"/>
-                                                <include reference="DXS-E9-yBQ"/>
-                                                <include reference="jb6-zc-m4Q"/>
-                                                <exclude reference="jgD-Wa-Ccq"/>
-                                                <include reference="lr1-9h-7gD"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -1293,48 +1293,7 @@ Each weekend I tried using new technologies that I have never used previously an
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJm-xH-JL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3345" y="936.75"/>
-        </scene>
-        <!--Test View Controller-->
-        <scene sceneID="zxc-vF-fQb">
-            <objects>
-                <viewController storyboardIdentifier="Test" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h31-LP-ixb" customClass="TestViewController" customModule="Giovanni_Alcantara" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Baw-r3-w0q"/>
-                        <viewControllerLayoutGuide type="bottom" id="FjX-gL-xKi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="T4k-oE-wfr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeaconCart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4o-eo-lRz">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="31"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="312" width="375" height="43"/>
-                                </variation>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.17254901959999999" green="0.50980392159999999" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <gestureRecognizers/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="H4o-eo-lRz"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="H4o-eo-lRz"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hIj-dl-lGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4053.75" y="986.625"/>
+            <point key="canvasLocation" x="3354" y="1185.75"/>
         </scene>
     </scenes>
     <resources>
@@ -1353,6 +1312,6 @@ Each weekend I tried using new technologies that I have never used previously an
         <image name="profile_normal" width="1440" height="839"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="p7g-kM-mzl"/>
+        <segue reference="Vwf-40-xL6"/>
     </inferredMetricsTieBreakers>
 </document>

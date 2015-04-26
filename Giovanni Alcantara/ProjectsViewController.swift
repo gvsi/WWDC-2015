@@ -46,17 +46,17 @@ class ProjectsViewController: UIViewController, ImagePickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var imagePicker1 = ImagePicker(frame: CGRect(x: self.view.frame.width / 2 - 50, y: 130, width: 100, height: 100))
+        var imagePicker1 = ImagePicker(frame: CGRect(x: self.view.frame.width / 2 - 50, y: 145, width: 100, height: 100))
         imagePicker1.color = UIColor(hex: "a8d4ff")
         imagePicker1.projectIdentifier = "BeaconCart"
         imagePicker1.delegate = self
         
-        var imagePicker2 = ImagePicker(frame: CGRect(x: self.view.frame.width / 2 - 50, y: 130, width: 100, height: 100))
+        var imagePicker2 = ImagePicker(frame: CGRect(x: self.view.frame.width / 2 - 50, y: 145, width: 100, height: 100))
         imagePicker2.projectIdentifier = "GoWalkers"
         imagePicker2.color = UIColor(hex: "005510")
         imagePicker2.delegate = self
         
-        var imagePicker3 = ImagePicker(frame: CGRect(x: self.view.frame.width / 2 - 50, y: 130, width: 100, height: 100))
+        var imagePicker3 = ImagePicker(frame: CGRect(x: self.view.frame.width / 2 - 50, y: 145, width: 100, height: 100))
         imagePicker3.projectIdentifier = "VerbaCore"
         imagePicker3.color = UIColor(hex: "e67e22")
         imagePicker3.delegate = self
@@ -111,7 +111,6 @@ class ProjectsViewController: UIViewController, ImagePickerDelegate {
     */
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Your Menu View Controller vew must know the following data for the proper animation
         let destinationVC = segue.destinationViewController as! MainMenuViewController
         destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
         destinationVC.hostTitleText = self.navigationItem.title
